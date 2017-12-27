@@ -1,18 +1,23 @@
 package com.thymeleaf.demo.entity;
 
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.Arrays;
 
+import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Customer {
 
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="customer_id")
 	private Integer id;
 	
 	private String username;
@@ -29,9 +34,14 @@ public class Customer {
 	
 	private String gender;
 	
-	private LocalDate birthdate;
+	@Temporal(TemporalType.DATE)
+	private Date birthdate;
 	
-	private LocalDate customerSince;
+	@Temporal(TemporalType.DATE)
+	private Date customerSince;
+    
+    @Embedded 
+    private Address address;
 
 	public Customer() {
 		super();
@@ -101,27 +111,36 @@ public class Customer {
 		this.gender = gender;
 	}
 
-	public LocalDate getBirthdate() {
+	public Date getBirthdate() {
 		return birthdate;
 	}
 
-	public void setBirthdate(LocalDate birthdate) {
+	public void setBirthdate(Date birthdate) {
 		this.birthdate = birthdate;
 	}
 
-	public LocalDate getCustomerSince() {
+	public Date getCustomerSince() {
 		return customerSince;
 	}
 
-	public void setCustomerSince(LocalDate customerSince) {
+	public void setCustomerSince(Date customerSince) {
 		this.customerSince = customerSince;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", username=" + username + ", email=" + email + ", password="
 				+ Arrays.toString(password) + ", firstName=" + firstName + ", lastName=" + lastName + ", title=" + title
-				+ ", gender=" + gender + ", birthdate=" + birthdate + ", customerSince=" + customerSince + "]";
+				+ ", gender=" + gender + ", birthdate=" + birthdate + ", customerSince=" + customerSince + ", address="
+				+ address + "]";
 	}	
 
 }
