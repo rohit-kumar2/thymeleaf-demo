@@ -1,11 +1,19 @@
 package com.thymeleaf.demo.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.Arrays;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Customer {
 
-	
-	private String id;
+	@Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
 	
 	private String username;
 
@@ -21,13 +29,19 @@ public class Customer {
 	
 	private String gender;
 	
-	private Date birthdate;
+	private LocalDate birthdate;
+	
+	private LocalDate customerSince;
 
-	public String getId() {
+	public Customer() {
+		super();
+	}
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -87,14 +101,27 @@ public class Customer {
 		this.gender = gender;
 	}
 
-	public Date getBirthdate() {
+	public LocalDate getBirthdate() {
 		return birthdate;
 	}
 
-	public void setBirthdate(Date birthdate) {
+	public void setBirthdate(LocalDate birthdate) {
 		this.birthdate = birthdate;
 	}
 
-	
+	public LocalDate getCustomerSince() {
+		return customerSince;
+	}
+
+	public void setCustomerSince(LocalDate customerSince) {
+		this.customerSince = customerSince;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", username=" + username + ", email=" + email + ", password="
+				+ Arrays.toString(password) + ", firstName=" + firstName + ", lastName=" + lastName + ", title=" + title
+				+ ", gender=" + gender + ", birthdate=" + birthdate + ", customerSince=" + customerSince + "]";
+	}	
 
 }
