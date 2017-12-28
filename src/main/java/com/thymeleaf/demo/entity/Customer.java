@@ -1,8 +1,7 @@
 package com.thymeleaf.demo.entity;
 
-import java.sql.Date;
 import java.util.Arrays;
-
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -18,7 +17,7 @@ public class Customer {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="customer_id")
-	private Integer id;
+	private Long id;
 	
 	private String username;
 
@@ -47,11 +46,11 @@ public class Customer {
 		super();
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

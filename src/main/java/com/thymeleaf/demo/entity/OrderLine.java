@@ -1,6 +1,9 @@
 package com.thymeleaf.demo.entity;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +17,7 @@ public class OrderLine {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="line_id")
-	private Integer id;
+	private Long id;
 	
 	@OneToOne
 	@JoinColumn(name="product_id")
@@ -23,16 +26,23 @@ public class OrderLine {
 	private Integer quantity;
 	
 	private Integer amount;
+    
+    @Embedded
+    @AttributeOverrides({
+    	@AttributeOverride(name="state", column=@Column(name="province")),
+    	        @AttributeOverride(name="zip", column=@Column(name="postal_code"))
+    })
+    private Address shippingAddress;
 
 	public OrderLine() {
 		super();
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -60,9 +70,18 @@ public class OrderLine {
 		this.amount = amount;
 	}
 
+	public Address getShippingAddress() {
+		return shippingAddress;
+	}
+
+	public void setShippingAddress(Address shippingAddress) {
+		this.shippingAddress = shippingAddress;
+	}
+
 	@Override
 	public String toString() {
-		return "OrderLine [id=" + id + ", product=" + product + ", quantity=" + quantity + ", amount=" + amount + "]";
+		return "OrderLine [id=" + id + ", product=" + product + ", quantity=" + quantity + ", amount=" + amount
+				+ ", shippingAddress=" + shippingAddress + "]";
 	}
 
 }
