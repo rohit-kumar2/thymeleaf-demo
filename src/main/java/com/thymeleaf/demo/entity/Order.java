@@ -2,7 +2,11 @@ package com.thymeleaf.demo.entity;
 
 import java.util.Date;
 import java.util.Set;
+
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,6 +34,13 @@ public class Order {
 	@OneToOne
 	@JoinColumn(name="customer_id")
 	private Customer customer;
+    
+    @Embedded
+    @AttributeOverrides({
+    	@AttributeOverride(name="state", column=@Column(name="province")),
+    	        @AttributeOverride(name="zip", column=@Column(name="postal_code"))
+    })
+    private Address shippingAddress;
 	
 	@OneToMany
 	@JoinTable(name="order_lines", joinColumns=@JoinColumn(name="order_id"), inverseJoinColumns=@JoinColumn(name="line_id"))	
@@ -63,18 +74,20 @@ public class Order {
 		this.customer = customer;
 	}
 
+	public Address getShippingAddress() {
+		return shippingAddress;
+	}
+
+	public void setShippingAddress(Address shippingAddress) {
+		this.shippingAddress = shippingAddress;
+	}
+
 	public Set<OrderLine> getOrderLines() {
 		return orderLines;
 	}
 
 	public void setOrderLines(Set<OrderLine> orderLines) {
 		this.orderLines = orderLines;
-	}
-
-	@Override
-	public String toString() {
-		return "Order [id=" + id + ", orderDate=" + orderDate + ", customer=" + customer + ", orderLines=" + orderLines
-				+ "]";
 	}
 
 }

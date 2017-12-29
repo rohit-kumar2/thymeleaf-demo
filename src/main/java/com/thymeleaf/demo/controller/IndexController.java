@@ -10,12 +10,7 @@ public class IndexController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
-        model.addAttribute("recipient", "World");
-        return "index";
-    }
-	@RequestMapping(value = "/students", method = RequestMethod.GET)
-    public String showStudents(Model model) {		
-        return "students";
+        return "product";
     }
 
 }
