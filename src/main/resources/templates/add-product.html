@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Products</title>
+</head>
+<body>
+	<form id="product-frm" method="post" th:action="@{/product}" th:object="${product}">
+		<div>
+			<label for="name">Product name</label><input type="text" name="name" th:field="*{name}"/>
+		</div>
+		<div>
+			<label for="price">Price</label><input type="text" name="price" th:field="*{price}"/>
+		</div>
+		<div>
+			<label for="inStock">In stock</label><input type="checkbox" name="inStock" th:field="*{inStock}"/>
+		</div>
+		<button type="submit" name="submit">Add Product</button>
+	</form>
+</body>
+</html>
