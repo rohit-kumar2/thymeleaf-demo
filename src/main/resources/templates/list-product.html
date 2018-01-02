@@ -1,4 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
+<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/css/jquery-editable.css" rel="stylesheet"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/js/jquery-editable-poshytip.min.js"></script>
 <head>
 <title>Products</title>
 </head>
@@ -7,16 +10,20 @@
 		<table>
 			<tr th:each="product : ${products}">
 				<td>
-					<span th:text="${product.name}"></span>
+					<a href="#" class="x-edit" th:id="name-+${product.id}+-text" th:href="@{'/product/'+${product.id}}" th:text="${product.name}"></a>
 				</td>
 				<td>
-					<span th:text="${product.price}"></span>
+					<a href="#" class="x-edit" th:id="price-+${product.id}+-text" th:href="@{'/product/'+${product.id}}" th:text="${product.price}"></a>
 				</td>
 				<td>
-					<span th:text="${product.inStock}"></span>
+					<a href="#" class="x-edit" th:id="inStock-+${product.id}+-select" th:href="@{'/product/'+${product.id}}" th:text="${product.inStock}"></a>
 				</td>
 			</tr>
 			<tr>
+				<td>
+					<span data-bind="editable: computed, editableOptions: { mode: 'inline', type: 'select', source: [{value : 0, text: &#34;false&#34; }, { value: 1, text: &#34;true&#34; }]}"></span>
+					<span data-bind="text: value"></span>
+				</td>
 				<td>
 					<a th:href="@{${'/product'}}">Add Product</a>
 				</td>
@@ -24,4 +31,38 @@
 		</table>
 	</div>
 </body>
+
+<script type="text/javascript">
+	function ViewModel() {
+	    var self = this;
+	    self.value = ko.observable(true);
+	    self.computed = ko.computed({
+	        read: function() { return self.value() ? 1 : 0 },
+	        write: function(newValue) { self.value(newValue == '1') }
+	    });
+	}
+	
+	$(document).ready(function(){
+	    //ko.applyBindings(new ViewModel());
+		//<![CDATA[
+		//turn to inline mode
+		$.fn.editable.defaults.mode = 'inline'; // popup default
+			
+		var i;
+		var links = $('.x-edit');
+		for(i=0; i<links.length; i++) {
+			var id = links[i].id;
+			var href = links[i].href;
+			$('#'+id).editable({
+			    type: id.split('-')[2],
+			    pk: id.split('-')[1], // primary key (record id)
+				name: id.split('-')[0],
+			    url: href, // Send ajax request with new value on /post
+			    /*title: 'Enter username' */
+			});
+		}	
+	});
+	//]]>
+</script>
+
 </html>

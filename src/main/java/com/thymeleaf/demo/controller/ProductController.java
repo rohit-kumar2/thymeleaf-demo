@@ -1,5 +1,8 @@
 package com.thymeleaf.demo.controller;
 
+import java.lang.reflect.Field;
+import java.math.BigDecimal;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.thymeleaf.demo.entity.Product;
+import com.thymeleaf.demo.entity.XEditableForm;
 import com.thymeleaf.demo.service.ProductService;
 
 @Controller
@@ -34,12 +36,21 @@ public class ProductController {
 		return "redirect:/";
 	}
 	
+	@SuppressWarnings("unchecked")
 	@PutMapping
 	@RequestMapping("/{id}")
-	@ResponseBody()
-	public String updateProduct(@PathVariable Long id, @Valid Product product) {
-		Product product1 = productService.updateProduct(product);
-		return String.valueOf(product1.getId());
+	public <T,V> String updateProduct(@PathVariable Long id, @Valid XEditableForm<T> form) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+		Product product = productService.getProduct(id);
+		V value = null;
+		Field fieldToUpdate = product.getClass().getDeclaredField(form.getName());
+		fieldToUpdate.setAccessible(true);
+		if(BigDecimal.class.equals(fieldToUpdate.getType())) {
+			value = (V) new BigDecimal(form.getValue().toString());
+		} else
+			value = (V) form.getValue();
+		fieldToUpdate.set(product, fieldToUpdate.getType().cast(value));
+		productService.updateProduct(product);
+		return "redirect:/";
 	}
 
 }
