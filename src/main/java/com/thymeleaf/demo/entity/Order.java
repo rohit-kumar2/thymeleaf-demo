@@ -1,8 +1,7 @@
 package com.thymeleaf.demo.entity;
 
 import java.util.Date;
-import java.util.Set;
-
+import java.util.List;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
@@ -44,7 +43,7 @@ public class Order {
 	
 	@OneToMany
 	@JoinTable(name="order_lines", joinColumns=@JoinColumn(name="order_id"), inverseJoinColumns=@JoinColumn(name="line_id"))	
-	private Set<OrderLine> orderLines;
+	private List<OrderLine> orderLines;
 
 	public Order() {
 		super();
@@ -82,11 +81,11 @@ public class Order {
 		this.shippingAddress = shippingAddress;
 	}
 
-	public Set<OrderLine> getOrderLines() {
+	public List<OrderLine> getOrderLines() {
 		return orderLines;
 	}
 
-	public void setOrderLines(Set<OrderLine> orderLines) {
+	public void setOrderLines(List<OrderLine> orderLines) {
 		this.orderLines = orderLines;
 	}
 

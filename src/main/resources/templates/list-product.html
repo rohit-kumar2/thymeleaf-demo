@@ -1,7 +1,7 @@
-<html xmlns:th="http://www.thymeleaf.org">
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
 <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/css/jquery-editable.css" rel="stylesheet"/>
 <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/js/jquery-editable-poshytip.min.js"></script>
+<<<<<<< Updated upstream
 <head>
 <title>Products</title>
 </head>
@@ -37,6 +37,33 @@
 		</table>
 	</div>
 </body>
+=======
+
+<div xmlns:th="http://www.thymeleaf.org">
+	<table>
+		<tr th:each="product : ${products}">
+			<td>
+				<a href="#" class="x-edit" th:id="name-+${product.id}+-text" th:href="@{'/product/'+${product.id}}" th:text="${product.name}"></a>
+			</td>
+			<td>
+				<a href="#" class="x-edit" th:id="price-+${product.id}+-text" th:href="@{'/product/'+${product.id}}" th:text="${product.price}"></a>
+			</td>
+			<td>
+				<a href="#" class="x-edit" th:id="inStock-+${product.id}+-select" th:href="@{'/product/'+${product.id}}" th:text="${product.inStock}"></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span data-bind="editable: computed, editableOptions: { mode: 'inline', type: 'select', source: [{value : 0, text: &#34;false&#34; }, { value: 1, text: &#34;true&#34; }]}"></span>
+				<span data-bind="text: value"></span>
+			</td>
+			<td>
+				<a th:href="@{'/product/add'}">Add Product</a>
+			</td>
+		</tr>
+	</table>
+</div>
+>>>>>>> Stashed changes
 
 <script type="text/javascript">
 	
@@ -73,5 +100,3 @@
 	});
 	//]]>
 </script>
-
-</html>

@@ -25,15 +25,23 @@ public class ProductController {
 	private ProductService productService;
 	
 	@GetMapping
-	public String showAllProducts(Model model) {
+	@RequestMapping("/add")
+	public String showAddProducts(Model model) {
 		model.addAttribute("product", new Product());
 		return "add-product";
+	}
+	
+	@GetMapping
+	@RequestMapping("/list")
+	public String showAllProducts(Model model) {
+		model.addAttribute("products", productService.getAllProducts());
+        return "list-product";
 	}
 	
 	@PostMapping
 	public String createProduct(@Valid Product product) {
 		productService.insertProduct(product);
-		return "redirect:/";
+		return "redirect:/product/list";
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -53,7 +61,7 @@ public class ProductController {
 		
 		fieldToUpdate.set(product, fieldToUpdate.getType().cast(value));
 		productService.updateProduct(product);
-		return "redirect:/";
+		return "redirect:/product/list";
 	}
 
 }

@@ -1,0 +1,35 @@
+<div xmlns:th="http://www.thymeleaf.org">
+	<table>
+		<tr th:each="order : ${orders}" th:if="${orders != null}">
+			<td>
+				<span th:text="${order.orderDate}"></span>
+			</td>
+			<td>
+				<span th:text="${order.shippingAddress}"></span>
+			</td>
+			<td>
+				<table>
+					<tr th:each="line : ${order.orderLines}" th:if="${order.orderLines != null}">
+						<td>
+							<span th:text="${line.product.name}"></span>
+						</td>
+						<td>
+							<span th:text="${line.product.price}"></span>
+						</td>
+						<td>
+							<span th:text="${line.quantity}"></span>
+						</td>
+						<td>
+							<span th:text="${line.amount}"></span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>			
+			<td>
+				<a th:href="@{'/order/create'}">Create Order</a>
+			</td>
+		</tr>
+	</table>
+</div>

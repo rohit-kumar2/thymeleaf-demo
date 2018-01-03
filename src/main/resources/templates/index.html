@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Home page</title>
+        <title>Demo</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <p>
-            <span th:text="'Today is: ' + ${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></span>
-            <span th:text="${recipient}"></span>
-        </p>
+        <div>
+            <label>Choose Profile : </label>
+            <a th:text="ADMIN" th:href="@{'/product/list'}"></a>
+            <a th:text="CUSTOMER" th:href="@{'/order/list'}"></a>
+        </div>
     </body>
 </html>

@@ -1,0 +1,46 @@
+<div xmlns:th="http://www.thymeleaf.org">
+	<form id="order-frm" method="post" th:action="@{/order}" th:object="${order}">
+		<table>
+			<tr th:each="line, itr : ${order.orderLines}" th:if="${line.product.inStock}">
+				<td>
+					<span th:text="${line.product.name}"></span>
+				</td>
+				<td>
+					<span th:text="${line.product.price}"></span>
+				</td>
+				<td>
+					<span th:text="${line.quantity}"></span>
+					<input type="number" th:name="${'orderLines['+ itr.index +'].quantity'}"  th:value="${line.quantity}"/>
+				</td>
+				<td>
+					<button th:id="${line.product.id}" type="button" class="add">Add Item</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Street</label>
+					<input type="text" th:field="${order.shippingAddress.street}"/>
+				</td>
+				<td>
+					<label>City</label>
+					<input type="text" th:field="${order.shippingAddress.city}"/>
+				</td>
+				<td>
+					<label>Pin Code</label>
+					<input type="text" th:field="${order.shippingAddress.zip}"/>
+				</td>
+				<td>
+					<button type="submit" class="add">Place Order</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	<script th:inline="javascript">
+    /*<![CDATA[*/
+    	$('.add').click(function() {
+    		console.log($(this).attr('id'));
+    	});
+    /*]]>*/
+	</script>
+</div>
