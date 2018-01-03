@@ -10,18 +10,24 @@
 		<table>
 			<tr th:each="product : ${products}">
 				<td>
-					<a href="#" class="x-edit" th:id="name-+${product.id}+-text" th:href="@{'/product/'+${product.id}}" th:text="${product.name}"></a>
+					<a href="#" class="x-edit" 
+					th:id="name-+${product.id}+-text" th:href="@{'/product/'+${product.id}}" th:text="${product.name}"></a>
 				</td>
 				<td>
-					<a href="#" class="x-edit" th:id="price-+${product.id}+-text" th:href="@{'/product/'+${product.id}}" th:text="${product.price}"></a>
+					<a href="#" class="x-edit" th:id="price-+${product.id}+-text" th:href="@{'/product/'+${product.id}}" 
+					   th:text="${product.price}"></a>
 				</td>
 				<td>
-					<a href="#" class="x-edit" th:id="inStock-+${product.id}+-select" th:href="@{'/product/'+${product.id}}" th:text="${product.inStock}"></a>
+					<a href="#" class="x-edit" th:id="inStock-+${product.id}+-select" th:href="@{'/product/'+${product.id}}" 
+						th:text="${product.inStock}"></a>
 				</td>
 			</tr>
+			
 			<tr>
 				<td>
-					<span data-bind="editable: computed, editableOptions: { mode: 'inline', type: 'select', source: [{value : 0, text: &#34;false&#34; }, { value: 1, text: &#34;true&#34; }]}"></span>
+					<span data-bind="editable: computed, editableOptions: 
+					{ mode: 'inline', type: 'select', source: [{value : 0, text: &#34;false&#34; }, { value: 1, text: &#34;true&#34; }]}">
+					</span>
 					<span data-bind="text: value"></span>
 				</td>
 				<td>
@@ -33,6 +39,7 @@
 </body>
 
 <script type="text/javascript">
+	
 	function ViewModel() {
 	    var self = this;
 	    self.value = ko.observable(true);
@@ -40,7 +47,7 @@
 	        read: function() { return self.value() ? 1 : 0 },
 	        write: function(newValue) { self.value(newValue == '1') }
 	    });
-	}
+	};
 	
 	$(document).ready(function(){
 	    //ko.applyBindings(new ViewModel());
@@ -50,9 +57,11 @@
 			
 		var i;
 		var links = $('.x-edit');
+		
 		for(i=0; i<links.length; i++) {
 			var id = links[i].id;
 			var href = links[i].href;
+			
 			$('#'+id).editable({
 			    type: id.split('-')[2],
 			    pk: id.split('-')[1], // primary key (record id)

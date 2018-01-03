@@ -39,7 +39,9 @@ public class ProductController {
 	@SuppressWarnings("unchecked")
 	@PutMapping
 	@RequestMapping("/{id}")
-	public <T,V> String updateProduct(@PathVariable Long id, @Valid XEditableForm<T> form) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+	public <T,V> String updateProduct(@PathVariable Long id, @Valid XEditableForm<T> form) throws NoSuchFieldException, 
+									   SecurityException, IllegalArgumentException, IllegalAccessException {
+		
 		Product product = productService.getProduct(id);
 		V value = null;
 		Field fieldToUpdate = product.getClass().getDeclaredField(form.getName());
@@ -48,6 +50,7 @@ public class ProductController {
 			value = (V) new BigDecimal(form.getValue().toString());
 		} else
 			value = (V) form.getValue();
+		
 		fieldToUpdate.set(product, fieldToUpdate.getType().cast(value));
 		productService.updateProduct(product);
 		return "redirect:/";
