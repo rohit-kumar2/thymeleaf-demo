@@ -1,5 +1,31 @@
 <div xmlns:th="http://www.thymeleaf.org">
 	<table>
+		<tr>
+			<th>
+				<span th:text="#{order.date}"></span>
+			</th>
+			<th>
+				<span th:text="#{order.shippingAddress}"></span>
+			</th>
+			<th>
+				<table>
+					<tr>
+						<th>
+							<span th:text="#{product.name}"></span>
+						</th>
+						<th>
+							<span th:text="#{product.price}"></span>
+						</th>
+						<th>
+							<span th:text="#{product.quantity}"></span>
+						</th>
+						<th>
+							<span th:text="#{product.amount}"></span>
+						</th>
+					</tr>
+				</table>
+			</th>
+		</tr>
 		<tr th:each="order : ${orders}" th:if="${orders != null}">
 			<td>
 				<span th:text="${order.orderDate}"></span>

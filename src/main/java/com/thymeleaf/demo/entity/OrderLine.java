@@ -1,5 +1,6 @@
 package com.thymeleaf.demo.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 @Entity
 public class OrderLine {
@@ -16,13 +18,16 @@ public class OrderLine {
 	@Column(name="line_id")
 	private Long id;
 	
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="product_id")
 	private Product product;
 	
 	private Integer quantity;
 	
 	private Integer amount;
+	
+	@Transient
+	private String isOrdered;
 
 	public OrderLine() {
 		super();
@@ -60,9 +65,18 @@ public class OrderLine {
 		this.amount = amount;
 	}
 
+	public String getIsOrdered() {
+		return isOrdered;
+	}
+
+	public void setIsOrdered(String isOrdered) {
+		this.isOrdered = isOrdered;
+	}
+
 	@Override
 	public String toString() {
-		return "OrderLine [id=" + id + ", product=" + product + ", quantity=" + quantity + ", amount=" + amount + "]";
+		return "OrderLine [id=" + id + ", product=" + product + ", quantity=" + quantity + ", amount=" + amount
+				+ ", isOrdered=" + isOrdered + "]";
 	}
 
 }

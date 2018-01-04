@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ public class Order {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date orderDate;
 	
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="customer_id")
 	private Customer customer;
     
@@ -41,7 +42,7 @@ public class Order {
     })
     private Address shippingAddress;
 	
-	@OneToMany
+	@OneToMany(cascade = {CascadeType.ALL})
 	@JoinTable(name="order_lines", joinColumns=@JoinColumn(name="order_id"), inverseJoinColumns=@JoinColumn(name="line_id"))	
 	private List<OrderLine> orderLines;
 

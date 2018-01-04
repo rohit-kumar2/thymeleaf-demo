@@ -1,6 +1,7 @@
 package com.thymeleaf.demo.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,14 +35,7 @@ public class OrderController {
 	public String showAddOrders(Model model) {
 		Order order = new Order();
 		List<Product> productList = productService.getAllProducts();
-		List<OrderLine> lineSet = new ArrayList<>();
-		for(Product product: productList) {
-			OrderLine line = new OrderLine();
-			line.setProduct(product);
-			lineSet.add(line);
-		}
-		order.setOrderLines(lineSet);
-		model.addAttribute("custId", customerService.getAllCustomers().get(0).getId());
+		order.setCustomer(customerService.getAllCustomers().get(0));
 		model.addAttribute("products", productList);
 		model.addAttribute("order", order);
 		return "create-order";
@@ -50,7 +44,7 @@ public class OrderController {
 	@GetMapping
 	@RequestMapping("/list")
 	public String showAllOrders(Model model) {
-		model.addAttribute("custId", customerService.getAllCustomers().get(0).getId());
+		model.addAttribute("cust", customerService.getAllCustomers().get(0));
 		model.addAttribute("products", productService.getAllProducts());
 		model.addAttribute("orders", orderService.getAllOrders());
         return "list-order";
@@ -60,12 +54,14 @@ public class OrderController {
 	public String createOrder(@Valid Order order) {
 		List<OrderLine> orderItems = new ArrayList<>();
 		for(OrderLine line : order.getOrderLines()) {
-			if(line.getQuantity() != null && line.getQuantity() > 0) {
+			if(line.getIsOrdered() != null && line.getIsOrdered().equals("Y")) {
+				line.setProduct(productService.getProduct(line.getProduct().getId()));
 				line.setAmount(line.getQuantity() * line.getProduct().getPrice().intValue());
 				orderItems.add(line);
 			}
 		}
 		order.setOrderLines(orderItems);
+		order.setOrderDate(new Date());
 		orderService.insertOrder(order);
 		return "redirect:/order/list";
 	}
