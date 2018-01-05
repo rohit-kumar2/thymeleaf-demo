@@ -2,6 +2,7 @@ package com.thymeleaf.demo.controller;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.security.Principal;
 
 import javax.validation.Valid;
 
@@ -33,7 +34,7 @@ public class ProductController {
 	
 	@GetMapping
 	@RequestMapping("/list")
-	public String showAllProducts(Model model) {
+	public String showAllProducts(Model model, Principal principal) {
 		model.addAttribute("products", productService.getAllProducts());
         return "list-product";
 	}
