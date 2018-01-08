@@ -22,8 +22,7 @@ import com.greenfence.payments.client.PaymentsClientConfig;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
-@Import({BpmSsoClientSecurityConfigurer.class, ActivitiConfig.class, InfrastructureConfig.class,
-	NotificationsClientConfig.class, PaymentsClientConfig.class, DocumentsClientConfig.class, CommonRepositoryConfig.class,  StompWebSocketConfig.class})
+@Import({InfrastructureConfig.class, CommonRepositoryConfig.class})
 @EnableJpaRepositories(basePackages="com.thymeleaf.demo.repository")
 public class PersistenceConfig {
 	

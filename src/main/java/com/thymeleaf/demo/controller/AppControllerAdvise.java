@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import com.greenfence.common.web.CommonControllerAdvise;
 import com.greenfence.sso.client.SsoClient;
-import com.thmeleaf.demo.manager.AppRoleManager;
+import com.thymeleaf.demo.manager.AppRoleManager;
 import com.thymeleaf.demo.conf.DemoConfiguration;
 
 @ControllerAdvice
