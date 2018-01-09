@@ -18,11 +18,11 @@ import com.greenfence.common.repository.CommonRepositoryConfig;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
-@Import({BpmSsoClientSecurityConfigurer.class, InfrastructureConfig.class})
+@Import({BpmSsoClientSecurityConfigurer.class, InfrastructureConfig.class, ActivitiConfig.class})
 @EnableJpaRepositories(basePackages="com.thymeleaf.demo.repository")
 public class PersistenceConfig {
 	
-	@Value("${spring.datasource.url}")
+	/*@Value("${spring.datasource.url}")
 	private String url;
 	
 	@Value("${spring.datasource.username}")
@@ -32,7 +32,7 @@ public class PersistenceConfig {
 	private String password;
 	
 	@Value("${spring.datasource.driver-class-name}")
-	private String driverClass;/*
+	private String driverClass;
 	
 	@Bean
     public DataSource createDataSource() throws Exception {

@@ -40,21 +40,21 @@ public class AppControllerAdvise extends CommonControllerAdvise {
 		return config.getUi().getLinks();
 	}
 	
-	/*@Autowired
-	private AppRoleManager roleManager;*/
+	@Autowired
+	private AppRoleManager roleManager;
 	
 
 	@ModelAttribute("admin")
 	public Boolean admin(Principal principal, HttpSession session) {
-		//return roleManager.isAdmin(principal, session);
-		return true;
+		return roleManager.isAdmin(principal, session);
+		//return true;
     }
 	
 
 	@ModelAttribute("customer")
 	public Boolean isCustomer(Principal principal, HttpSession session) {
-		//return roleManager.isCustomer(principal, session);
-		return false;
+		return roleManager.isCustomer(principal, session);
+		//return false;
     }
 	
 	

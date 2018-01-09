@@ -10,6 +10,8 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
       ddl-auto : update
+  activiti:
+    checkProcessDefinitions : false
 
 server:
   port: 8080

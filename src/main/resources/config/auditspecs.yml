@@ -1,0 +1,2004 @@
+server:
+  port: 8080
+
+auditors:
+  ui:
+    languages:
+      - English
+      - Spanish
+      - French
+      - Japanese
+      - Mandarin (Chinese)
+      - Yue/Cantonese (Chinese)
+      - Gan (Chinese)
+      - German
+      - Italian
+      - Portuguese
+      - Dutch
+      - Swedish
+      - Greek
+      - Polish
+      - Hungarian
+      - Hindi
+      - Czech
+      - Punjabi
+      - Bengali
+      - Arabic
+      - Russian
+      - Ukrainian
+      - Somali
+      - Japanese
+      - Korean
+      - Turkish
+      - Kurdish
+      - Malay
+      - Vietnamese
+      - Telugu
+      - Tamil
+      - Urdu
+      - Persian
+      - Thai
+    links:
+      home: http://microservicesdev.greenfence.com
+      sso: http://localhost:28080/auth
+      payments: http://localhost:9090
+      documents: http://localhost:9595
+      notifications: http://localhost:9696
+      messaging: http://localhost:6969     
+  programs:
+    labs:
+      - key: acoustics-vibration
+        grouping: 17025
+        category: true
+        focus: calibration
+        name: "Acoustics & Vibration"
+        icon: /img/acoustics-vibration
+        info: "Acoustics & Vibration is about testing and calibrating machinery"
+        sub:
+          - key: acceleration
+            grouping: 17025
+            focus: calibration
+            name: "Acceleration"
+            icon: /img/acceleration.png
+            info: "Acceleration calibration"
+          - key: vibration
+            grouping: 17025
+            focus: calibration
+            name: "Vibration"
+            icon: /img/vibration.png
+            info: "Vibration calibration"
+          - key: acoustic-impedance
+            grouping: 17025
+            focus: acoustic-impedance
+            name: "Acoustic Impedance"
+            icon: /img/acoustic-impedance.png
+            info: "Acoustic Impedance calibration"
+          - key: sound-pressure-level
+            grouping: 17025
+            focus: calibration
+            name: "Sound Pressure Level"
+            icon: /img/sound-pressure-level.png
+            info: "Sound Pressure Level calibration"
+      - key: chemical-quantities
+        grouping: 17025
+        category: true
+        focus: calibration
+        name: "Chemical Quantities"
+        icon: /img/chemical-quantities.png
+        info: "Chemical Quantities is about traceability in chemical management"
+        sub:
+          - key: liquid
+            grouping: 17025
+            focus: calibration
+            name: "Liquid"
+            icon: /img/liquid.png
+            info: "Liquid calibration"
+            sub:
+              - key: quantities
+                grouping: 17025
+                focus: calibration
+                name: "Quantities"
+                icon: /img/liquid-quantities.png
+                info: "Liquid quantities"
+              - key : viscocity
+                grouping: 17025
+                focus: calibration
+                name: "Viscocity"
+                icon: /img/liquid-viscocity.png
+                info: "Liquid viscocity"
+          - key: gas
+            grouping: 17025
+            focus: calibration
+            name: "gas"
+            icon: /img/gas.png
+            info: "Gas calibration"
+          - key : particulate
+            grouping: 17025
+            focus: calibration
+            name: "Particulate"
+            icon: /img/particulate.png
+            info: "Particulate"
+          - key : ph-conductivity
+            grouping: 17025
+            focus: calibration
+            name: "pH/Conductivity"
+            icon: /img/ph-conductivity.png
+            info: "pH/Conductivity"
+          - key : refractive-index
+            grouping: 17025
+            focus: calibration
+            name: "Refractive Index"
+            icon: /img/refractive-index.png
+            info: "Refractive Index"
+      - key: electrical-dc
+        category: true
+        grouping: 17025
+        focus: calibration
+        name: "Electrical - DC/Low Frequency"
+        icon: /img/electrical-dc.png
+        info: "Electrical DC/Low frequency is about equipment calibration"
+        sub:
+          - key: iso9001
+            name : "ISO 9001"
+            info : "ISO 9001 Accrediation Programs are about..."
+            sub:    
+              - key: ba9000
+                name : "BA 9000"
+                info : "BA 9000 is about..."       
+              - key: sn9001 
+                name : "SN 9001"
+                info : "SN 9001 is about..." 
+              - key: tl9000 
+                name : "TL 9000"
+                info : "TL 9000 is about..."  
+                sub:    
+                  - key: as9120
+                    name : "AS 9120"
+                    info : "AS 9120 is about..."          
+              - key: as9100 
+                name : "AS 9100"
+                info : "AS 9100 is about..."           
+      - key: counterfeit
+        category: true
+        name: Counterfeit
+        icon: icon-counterfeit
+        info : "Counterfeit Accrediation Programs are about..."
+        sub:
+          - key: capacitance-inductance
+            grouping: 17025
+            focus: calibration
+            name: "Capacitance Inductance"
+            icon: /img/capacitance-inductance.png
+            info: "Capacitance & Inductance calibration"
+          - key: current
+            grouping: 17025
+            focus: calibration
+            name: "Current"
+            icon: /img/current.png
+            info: "Current calibration"
+          - key: resistance
+            grouping: 17025
+            focus: calibration
+            name: "Resistance"
+            icon: /img/resistance.png
+            info: "Resistance calibration"
+          - key: voltage
+            grouping: 17025
+            focus: calibration
+            name: "Voltage"
+            icon: /img/voltage.png
+            info: "Voltage calibration"
+            sub:
+              - key: measuring-instruments
+                grouping: 17025
+                focus: calibration
+                name: "Measuring Instruments"
+                icon: /img/measuring-instruments.png
+                info: "Measuring Instruments"
+              - key: fixed-point
+                grouping: 17025
+                focus: calibration
+                name: "Fixed Point reference standards"
+                icon: /img/fixed-point.png
+                info: "Fixed Point mesurements"
+          - key: impedance
+            grouping: 17025
+            focus: calibration
+            name: "Impedeance"
+            icon: /img/impedance.png
+            info: "Impedance calibration"
+          - key: magnetic-properties
+            grouping: 17025
+            focus: calibration
+            name: "Impedeance"
+            icon: /img/magnetic-properties.png
+            info: "Magnetic Properties"
+          - key: oscilloscopes
+            grouping: 17025
+            focus: calibration
+            name: "Oscilloscopes"
+            icon: /img/oscilloscopes.png
+            info: "Oscilloscopes"
+          - key: phase
+            grouping: 17025
+            focus: calibration
+            name: "Phase"
+            icon: /img/phase.png
+            info: "Phase"
+          - key: power
+            grouping: 17025
+            focus: calibration
+            name: "Power"
+            icon: /img/power.png
+            info: "Power"
+      - key: electrical-rf-microwave
+        grouping: 17025
+        category: true
+        focus: calibration
+        name: "Electrical - RF/Microwave"
+        icon: /img/electrical-rf-microwave.png
+        info: "Electrical - RF/Microwave"
+        sub:
+          - key: attenuation
+            grouping: 17025
+            focus: calibration
+            name: "Attenuation"
+            icon: /img/attenuation.png
+            info: "Attenuation"
+          - key: distortion
+            grouping: 17025
+            focus: calibration
+            name: "Distortion"
+            icon: /img/distortion.png
+            info: "Distortion"
+          - key: harmonics
+            grouping: 17025
+            focus: calibration
+            name: "Harmonics"
+            icon: /img/harmonics.png
+            info: "Harmonics"
+          - key: modulation
+            grouping: 17025
+            focus: calibration
+            name: "Modulation"
+            icon: /img/modulation.png
+            info: "Modulation"
+          - key: noise
+            grouping: 17025
+            focus: calibration
+            name: "Noise"
+            icon: /img/noise.png
+            info: "Noise"
+          - key: phase
+            grouping: 17025
+            focus: calibration
+            name: "Phase"
+            icon: /img/phase.png
+            info: "Phase"
+          - key: power
+            grouping: 17025
+            focus: calibration
+            name: "Power"
+            icon: /img/attenuation.png
+            info: "Power"
+          - key: scattering-parameters
+            grouping: 17025
+            focus: calibration
+            name: "Scattering Parameters"
+            icon: /img/scattering-parameters.png
+            info: "Scattering Parameters"
+          - key: vswr
+            grouping: 17025
+            focus: calibration
+            name: "VSWR"
+            icon: /img/vswr.png
+            info: "VSWR"
+      - key: ionizing-radiation
+        category: true
+        grouping: 17025
+        focus: calibration
+        name: "Ionizing Radiation"
+        icon: /img/ionizing-radiation.png
+        info: "Ionizing Radiation"
+        sub: 
+          - key: absorbed-dose-rate
+            grouping: 17025
+            focus: calibration
+            name: "Absored Dose Rate"
+            icon: /img/absorbed-dose-rate.png
+            info: "Absored Dose Rate"
+          - key: air-kerma-rate
+            grouping: 17025
+            focus: calibration
+            name: "Air Kerma Rate"
+            icon: /img/air-kerma-rate.png
+            info: "Air Kerma Rate"
+          - key: dose-equivalent
+            grouping: 17025
+            focus: calibration
+            name: "Dose Equivalent"
+            icon: /img/dose-equivalent.png
+            info: "Dose Equivalent"
+          - key: efficiency
+            grouping: 17025
+            focus: calibration
+            name: "Efficiency"
+            icon: /img/efficiency.png
+            info: "Efficiency"
+          - key: emission-rate
+            grouping: 17025
+            focus: calibration
+            name: "Emission Rate"
+            icon: /img/emission-rate.png
+            info: "Emission Rate"
+          - key: dosimetry
+            grouping: 17025
+            focus: calibration
+            name: "Dosimetry"
+            icon: /img/dosimetry.png
+            info: "Dosimetry"
+      - key: length-dimensional-metrology
+        category: true
+        grouping: 17025
+        focus: calibration
+        name: "Length - Dimensional Metrology"
+        icon: /img/length-dimensional-metrology.png
+        info: "Length - Dimensional Metrology"
+        sub:
+          - key: artifacts-1d
+            grouping: 17025
+            focus: calibration
+            name: "Artifacts 1D"
+            icon: /img/artifacts-1d.png
+            info: "Artifacts 1D"
+            sub:
+              - key: general-purpose
+                grouping: 17025
+                focus: calibration
+                name: "General Purpose"
+                icon: /img/general-purpose.png
+                info: "General Purpose"
+              - key: precision
+                grouping: 17025
+                focus: calibration
+                name: "Precision"
+                icon: /img/precision.png
+                info: "Precision"
+          - key: artifacts-2d-3d
+            grouping: 17025
+            focus: calibration
+            name: "Artifacts 2D/3D"
+            icon: /img/artifacts-2d-3d.png
+            info: "Artifacts 2D/3D"
+            sub:
+              - key: general-purpose
+                grouping: 17025
+                focus: calibration
+                name: "General Purpose"
+                icon: /img/general-purpose.png
+                info: "General Purpose"
+              - key: precision
+                grouping: 17025
+                focus: calibration
+                name: "Precision"
+                icon: /img/precision.png
+                info: "Precision"
+          - key: coordinate-measuring-machines
+            grouping: 17025
+            focus: calibration
+            name: "Coordinate Measuring Machines"
+            icon: /img/coordinate-measuring-machines.png
+            info: "Coordinate Measuring Machines"
+            sub:
+              - key: coordinate-systems
+                grouping: 17025
+                focus: calibration
+                name: "Coordinate Systems"
+                icon: /img/coordinate-systems.png
+                info: "Coordinate Systems"
+              - key: articulating-arms
+                grouping: 17025
+                focus: calibration
+                name: "Articulating Arms"
+                icon: /img/articulating-arms.png
+                info: "Articulting Arms"
+          - key: measuring-instruments
+            grouping: 17025
+            focus: calibration
+            name: "Measuring Instruments"
+            icon: /img/measuring-instruments.png
+            info: "Measuring Instruments"
+            sub:
+              - key: general-purpose
+                grouping: 17025
+                focus: calibration
+                name: "General Purpose"
+                icon: /img/general-purpose.png
+                info: "General Purpose"
+              - key: precision
+                grouping: 17025
+                focus: calibration
+                name: "Precision"
+                icon: /img/precision.png
+                info: "Precision"
+          - key: optical-comparators
+            grouping: 17025
+            focus: calibration
+            name: "Optical Comparators"
+            icon: /img/general-purpose.png
+            info: "Optical Comparators"
+      - key: mass-related
+        category: true
+        grouping: 17025
+        focus: calibration
+        name: "Mass & Mass Related"
+        icon: /img/mass-related.png
+        info: "Mass Related"
+        sub:
+          - key: hardness
+            grouping: 17025
+            focus: calibration
+            name: "Hardness"
+            icon: /img/hardness.png
+            info: "Hardness"
+            sub:
+              - key: durometers
+                grouping: 17025
+                focus: calibration
+                name: "Durometers"
+                icon: /img/durometers.png
+                info: "Durometers"
+              - key: micro-indentation
+                grouping: 17025
+                focus: calibration
+                name: "Microindentation"
+                icon: /img/micro-indentation.png
+                info: "Microindentation"
+              - key: rockwell-brinell-leeb
+                grouping: 17025
+                focus: calibration
+                name: "Rockwell Brinell Leeb"
+                icon: /img/rockwell-brinell-leeb.png
+                info: "Rockwell Brinell Leeb"
+          - key: flow
+            grouping: 17025
+            focus: calibration
+            name: "Flow"
+            icon: /img/flow.png
+            info: "Flow"
+          - key: force
+            grouping: 17025
+            focus: calibration
+            name: "Force"
+            icon: /img/force.png
+            info: "Flow"
+          - key: mass-artefacts
+            grouping: 17025
+            focus: calibration
+            name: "Mass Artefcats"
+            icon: /img/mass-artefacts.png
+            info: "Mass Artefacts"
+          - key: pressure-vacuum
+            grouping: 17025
+            focus: calibration
+            name: "Pressure Vacuum"
+            icon: /img/pressure-vacuum.png
+            info: "Pressure Vacuum"
+            sub:
+              - key: pressure-low-vacuum-guages
+                grouping: 17025
+                focus: calibration
+                name: "Pressure Low Vacuum Guages"
+                icon: /img/pressure-low-vacuum-guages.png
+                info: "Pressure Low Vacuum Guages"
+              - key: deadweight-measurement
+                grouping: 17025
+                focus: calibration
+                name: "Deadweight Measurement"
+                icon: /img/deadweight-measurement.png
+                info: "Deadweight Measurement"
+              - key: medium-high-vacuum
+                grouping: 17025
+                focus: calibration
+                name: "Medium High Vacuum"
+                icon: /img/medium-high-vacuum.png
+                info: "Medium High Vacuum"
+          - key: scales-balances
+            grouping: 17025
+            focus: calibration
+            name: "Scales & Balances"
+            icon: /img/scales-balances.png
+            info: "Scales & Balances"
+          - key: viscometers
+            grouping: 17025
+            focus: calibration
+            name: "Visometers"
+            icon: /img/viscometers.png
+            info: "Visometers"
+      - key: photometry-radiometry
+        category: true
+        grouping: 17025
+        focus: calibration
+        name: "Photometry & Radiometry"
+        icon: /img/photometry-radiometry.png
+        info: "Photometry & Radiometry"
+        sub:
+          - key: distribution-temperature
+            grouping: 17025
+            focus: calibration
+            name: "Distribution Temperature"
+            icon: /img/distribution-temperature.png
+            info: "Distribution Temperature"
+          - key: color-temperature
+            grouping: 17025
+            focus: calibration
+            name: "Color Temperature"
+            icon: /img/color-temperature.png
+            info: "Color Temperature"
+          - key: gloss-haze
+            grouping: 17025
+            focus: calibration
+            name: "Gloss & Haze"
+            icon: /img/gloess-haze.png
+            info: "Gloss & Haze"
+          - key: intensity
+            grouping: 17025
+            focus: calibration
+            name: "Intensity"
+            icon: /img/intensity.png
+            info: "Intensity"
+          - key: irradiance
+            grouping: 17025
+            focus: calibration
+            name: "Irradiance"
+            icon: /img/irradiance.png
+            info: "Irradiance"
+          - key: optical-attenuation
+            grouping: 17025
+            focus: calibration
+            name: "Optical Attenuation"
+            icon: /img/optical-attenuation.png
+            info: "Optical Attenuation"
+          - key: radiance
+            grouping: 17025
+            focus: radiance
+            name: "Radiance"
+            icon: /img/radiance.png
+            info: "Radiance"
+          - key: responsivity
+            grouping: 17025
+            focus: calibration
+            name: "Responsivity"
+            icon: /img/responsivity.png
+            info: "Responsivity"
+          - key: wavelength
+            grouping: 17025
+            focus: calibration
+            name: "Wavelength"
+            icon: /img/wavelength.png
+            info: "Wavelength"
+      - key: thermodynamic
+        category: true
+        grouping: 17025
+        focus: calibration
+        name: "Thermodynamic"
+        icon: /img/thermodynamic.png
+        info: "Thermodynamic"
+        sub:
+          - key: infrared-thermometers
+            grouping: 17025
+            focus: calibration
+            name: "Infrared Thermometers"
+            icon: /img/infrared-thermometers.png
+            info: "Infrared Thermometers"
+          - key: humidity
+            grouping: 17025
+            focus: calibration
+            name: "Humidity"
+            icon: /img/humidity.png
+            info: "Humidity"
+          - key: probes-sensors
+            grouping: 17025
+            focus: calibration
+            name: "Probes & Sensors"
+            icon: /img/probes-sensors.png
+            info: "Probes & Sensors"
+            sub:
+              - key: comparison
+                grouping: 17025
+                focus: calibration
+                name: "Comparison"
+                icon: /img/comparison.png
+                info: "Comparison"
+              - key: fixed-point
+                grouping: 17025
+                focus: calibration
+                name: "Fixed Point"
+                icon: /img/fixed-point.png
+                info: "Fixed Point" 
+          - key: liquid-in-glass-thermometers
+            grouping: 17025
+            focus: calibration
+            name: "Liquid in glass thermometers"
+            icon: /img/liquid-in-glass-thermometers.png
+            info: "Liquid in glass thermometers"
+          - key: temperature-sources
+            grouping: 17025
+            focus: calibration
+            name: "Temperature Sources"
+            icon: /img/temperature-sources.png
+            info: "Temperature Sources"
+            sub:
+              - key: baths-chambers-drywell
+                grouping: 17025
+                focus: calibration
+                name: "Baths Chambers Drywell"
+                icon: /img/baths-chambers-drywell.png
+                info: "Baths Chambers Drywell" 
+              - key: infrared-black-bodies
+                grouping: 17025
+                focus: calibration
+                name: "Infrared Black Bodies"
+                icon: /img/infrared-black-bodies.png
+                info: "Infrared Black Bodies" 
+              - key: fixed-point
+                grouping: 17025
+                focus: calibration
+                name: "Fixed Point"
+                icon: /img/fixed-point.png
+                info: "Fixed Point"
+      - key: time-frequency
+        category: true
+        grouping: 17025
+        focus: calibration
+        name: "Time & Frequency"
+        icon: /img/time-frequency.png
+        info: "Time & Frequency"
+        sub:
+          - key: frequency-period
+            grouping: 17025
+            focus: calibration
+            name: "Frequency Period"
+            icon: /img/frequency-period.png
+            info: "Frequency Period"
+          - key: time-interval
+            grouping: 17025
+            focus: calibration
+            name: "Time interval"
+            icon: /img/time-interval.png
+            info: "Time Interval"
+      - key: electrical
+        category: true
+        grouping: 17025
+        focus: testing
+        name: "Electrical"
+        icon: /img/electrical.png
+        info: "Electrical"
+        sub:
+          - key: continuity
+            grouping: 17025
+            focus: testing
+            name: "Continuity"
+            icon: /img/continuity.png
+            info: "Continuity"
+          - key: acdc-current
+            grouping: 17025
+            focus: testing
+            name: "ACDC Current"
+            icon: /img/acdc-current.png
+            info: "ACDC Current"
+          - key: charging-current
+            grouping: 17025
+            focus: testing
+            name: "Charging Current"
+            icon: /img/charging-current.png
+            info: "Charging Current"
+          - key: leakage-current
+            grouping: 17025
+            focus: testing
+            name: "Leakage Current"
+            icon: /img/leakage-current.png
+            info: "Leakage Current"
+          - key: resistance
+            grouping: 17025
+            focus: testing
+            name: "Resistance"
+            icon: /img/resistance.png
+            info: "Resistance"
+          - key: acdc-power
+            grouping: 17025
+            focus: testing
+            name: "ACDC Power"
+            icon: /img/acdc-power.png
+            info: "ACDC Power"
+          - key: acdc-voltage
+            grouping: 17025
+            focus: testing
+            name: "ACDC Voltage"
+            icon: /img/acdc-voltage.png
+            info: "ACDC Voltage"
+          - key: capacitance
+            grouping: 17025
+            focus: testing
+            name: "Capacitance"
+            icon: /img/capacitance.png
+            info: "Capacitance"
+          - key: cells-batteries
+            grouping: 17025
+            focus: testing
+            name: "Cells & Batteries"
+            icon: /img/cells-batteries.png
+            info: "Cells & Batteries"
+          - key: dielectric
+            grouping: 17025
+            focus: testing
+            name: "Dielectric"
+            icon: /img/dielectric.png
+            info: "Dielectric"
+            sub:
+              - key: resistance
+                grouping: 17025
+                focus: testing
+                name: "Resistance"
+                icon: /img/dielectric-resistance.png
+                info: "Resistance"
+              - key: withstanding
+                grouping: 17025
+                focus: testing
+                name: "Withstanding"
+                icon: /img/dielectric-withstanding.png
+                info: "Withstanding"
+          - key: electrical-field-intensity
+            grouping: 17025
+            focus: testing
+            name: "Electrical Field Intensity"
+            icon: /img/electrical-field-intensity.png
+            info: "Electrical Field Intensity"
+          - key: electronic-components
+            grouping: 17025
+            focus: testing
+            name: "Electronic Components"
+            icon: /img/electronic-components.png
+            info: "Electronic Components"
+          - key: environmental-simulation
+            grouping: 17025
+            focus: testing
+            name: "Environmental Simulation"
+            icon: /img/environmental-simulation.png
+            info: "Environmental Simulation"
+            sub:
+              - key: high-voltage-high-power
+                grouping: 17025
+                focus: testing
+                name: "High Voltage High Power"
+                icon: /img/high-voltage-high-power.png
+                info: "High Voltage High Power"
+              - key: high-voltage-impulse
+                grouping: 17025
+                focus: testing
+                name: "High Voltage Impulse"
+                icon: /img/high-voltage-impulse.png
+                info: "High Voltage Impulse"
+          - key: acdc-hipot
+            grouping: 17025
+            focus: testing
+            name: "ACDC Hipot"
+            icon: /img/acdc-hipot.png
+            info: "ACDC Hipot"
+          - key: product-safety
+            grouping: 17025
+            focus: testing
+            name: "Product Safety"
+            icon: /img/product-safety.png
+            info: "Product Safety"
+            sub:
+              - key: nebs
+                grouping: 17025
+                focus: testing
+                name: "NEBS"
+                icon: /img/nebs.png
+                info: "NEBS"
+          - key: recording-instruments
+            grouping: 17025
+            focus: testing
+            name: "Recording Instruments"
+            icon: /img/recording-instruments.png
+            info: "Recording Instruments"
+      - key: communications
+        category: true
+        grouping: 17025
+        focus: testing
+        name: "Communications"
+        icon: /img/communications.png
+        info: "Communications"
+        sub:
+          - key: cdma-tdma-gsm-ota
+            grouping: 17025
+            focus: testing
+            name: "CDMA TDMA GSM OTA"
+            icon: /img/cdma-tdma-gsm-ota.png
+            info: "CDMA TDMA GSM OTA"
+      - key: electromagnetic-compatibility
+        category: true
+        grouping: 17025
+        focus: testing
+        name: "Electromagnetic Compatibility / Electromagnetic Interference"
+        icon: /img/electromagnetic-compatibility.png
+        info: "Electromagnetic Compatibility / Electromagnetic Interference"
+        sub:
+          - key: conducted-emissions
+            grouping: 17025
+            focus: testing
+            name: "Conducted Emissions"
+            icon: /img/conducted-emissions.png
+            info: "Conducted Emissions"
+            sub:
+              - key: current
+                grouping: 17025
+                focus: testing
+                name: "Current"
+                icon: /img/current.png
+                info: "Current"
+              - key: voltage
+                grouping: 17025
+                focus: testing
+                name: "Voltage"
+                icon: /img/voltage.png
+                info: "Voltage"
+              - key: transient
+                grouping: 17025
+                focus: testing
+                name: "Transient"
+                icon: /img/transient.png
+                info: "Transient"
+          - key: radiated-emissions
+            grouping: 17025
+            focus: testing
+            name: "Radiated Emissions"
+            icon: /img/radiated-emissions.png
+            info: "Radiated Emissions"
+            sub:
+              - key: magnetic-field
+                grouping: 17025
+                focus: testing
+                name: "Magnetic Field"
+                icon: /img/magnetic-field.png
+                info: "Magnetic Field"
+              - key: electric-field
+                grouping: 17025
+                focus: testing
+                name: "Electric Field"
+                icon: /img/electric-field.png
+                info: "Electric Field"
+          - key: core-immunity-susceptibility
+            grouping: 17025
+            focus: testing
+            name: "Core Immunity Susceptibility"
+            icon: /img/core-immunity-susceptibility.png
+            info: "Core Immunity Susceptibility"
+            sub:
+              - key: electrostatic-discharge
+                grouping: 17025
+                focus: testing
+                name: "Electrostatic Discharge"
+                icon: /img/electrostatic-discharge.png
+                info: "Electrostatic Discharge"
+              - key: radiated-immunity
+                grouping: 17025
+                focus: testing
+                name: "Radiated Immunity"
+                icon: /img/radiated-immunity.png
+                info: "Radiated Immunity"
+              - key: transient-immunity
+                grouping: 17025
+                focus: testing
+                name: "Transient Immunity"
+                icon: /img/transient-immunity.png
+                info: "Transient Immunity"
+              - key: conducted-immunity
+                grouping: 17025
+                focus: testing
+                name: "Conducted Immunity"
+                icon: /img/conducted-immunity.png
+                info: "Conducted Immunity"
+              - key: power-input-disturbances
+                grouping: 17025
+                focus: testing
+                name: "Power Input Disturbances"
+                icon: /img/power-input-disturbances.png
+                info: "Power Input Disturbances"
+          - key: testing-support-fcc-doc
+            category: true
+            grouping: 17025
+            focus: testing
+            name: "Testing Performed In Support of FCC DOC & Certification"
+            icon: /img/testing-support-fcc-doc.png
+            info: "Testing Performed In Support of FCC DOC & Certification"
+            sub:
+              - key: unintentional-radiators-fcc-15-b
+                grouping: 17025
+                focus: testing
+                name: "Unintentional Radiators (FCC Part 15, Subpart B)"
+                icon: /img/unintentional-radiators-fcc-15-b.png
+                info: "Unintentional Radiators (FCC Part 15, Subpart B)"
+              - key: industrial-scientific-medical-equipment
+                grouping: 17025
+                focus: testing
+                name: "Industrial, Scientific, and Medical Equipment (FCC Part 18) Consumer ISM equipment"
+                icon: /img/industrial-scientific-medical-equipment.png
+                info: "Industrial, Scientific, and Medical Equipment (FCC Part 18) Consumer ISM equipment"
+              - key: u-nii-without-dfs-intentional-radiators
+                grouping: 17025
+                focus: testing
+                name: "Intentional Radiators (FCC Part 15 Subpart C)"
+                icon: /img/u-nii-without-dfs-intentional-radiators.png
+                info: "Intentional Radiators (FCC Part 15 Subpart C)"
+              - key: upcs-unlicensed-personal-communication-systems
+                grouping: 17025
+                focus: testing
+                name: "UPCS (FCC Part 15, Subpart D) Unlicensed Personal Communication Systems devices"
+                icon: /img/upcs-unlicensed-personal-communication-systems.png
+                info: "UPCS (FCC Part 15, Subpart D) Unlicensed Personal Communication Systems devices"
+              - key: u-nii-without-dfs-intentional-radiators-subpart-e
+                grouping: 17025
+                focus: testing
+                name: "U-NII without DFS Intentional Radiators (FCC Part 15, Subpart E) Unlicensed National Information Infrastructure Devices (U-NII without DFS)"
+                icon: /img/u-nii-without-dfs-intentional-radiators.png
+                info: "U-NII without DFS Intentional Radiators (FCC Part 15, Subpart E) Unlicensed National Information Infrastructure Devices (U-NII without DFS)"
+              - key: u-nii-with-dfs-intentional-radiators-subpart-e
+                grouping: 17025
+                focus: testing
+                name: "U-NII with DFS Intentional Radiators (FCC Part 15 Subpart E) Unlicensed National Information Infrastructure U-NII) Devices with Dynamic Frequency Selection (DFS)"
+                icon: /img/u-nii-with-dfs-intentional-radiators-subpart-e.png
+                info: "U-NII with DFS Intentional Radiators (FCC Part 15 Subpart E) Unlicensed National Information Infrastructure U-NII) Devices with Dynamic Frequency Selection (DFS)"
+              - key: uwb-intentional-radiators-fcc-15-b
+                grouping: 17025
+                focus: testing
+                name: "UWB Intentional Radiators (FCC Part 15, Subpart F) Ultra-wideband Operation"
+                icon: /img/uwb-intentional-radiators-fcc-15-b.png
+                info: "UWB Intentional Radiators (FCC Part 15, Subpart F) Ultra-wideband Operation"
+              - key: bpl-intentional-radiators-fcc-15-g
+                grouping: 17025
+                focus: testing
+                name: "BPL Intentional Radiators (FCC Part 15, Subpart G) Access Broadband Over Power Line (Access BPL)"
+                icon: /img/uwb-intentional-radiators-fcc-15-b.png
+                info: "BPL Intentional Radiators (FCC Part 15, Subpart G) Access Broadband Over Power Line (Access BPL)"
+              - key: white-space-device-intentional-radiators-fcc-15-h
+                grouping: 17025
+                focus: testing
+                name: "White Space Device Intentional Radiators (FCC Part 15, Subpart H) White Space Devices"
+                icon: /img/white-space-device-intentional-radiators-fcc-15-h.png
+                info: "White Space Device Intentional Radiators (FCC Part 15, Subpart H) White Space Devices"
+              - key: commercial-mobile-services
+                grouping: 17025
+                focus: testing
+                name: "Commercial Mobile Services (FCC Licensed Radio Service Equipment) Part 22 (cellular) Part 24 Part 25 (non-microwave) Part 27"
+                icon: /img/commercial-mobile-services.png
+                info: "Commercial Mobile Services (FCC Licensed Radio Service Equipment) Part 22 (cellular) Part 24 Part 25 (non-microwave) Part 27"
+              - key: general-mobile-radio-services
+                grouping: 17025
+                focus: testing
+                name: "General Mobile Radio Services (FCC Licensed Radio Service Equipment) Part 22 (non-cellular) Part 90 (non-microwave) Part 95 Part 97 Part 101 (non-microwave)"
+                icon: /img/general-mobile-radio-services.png
+                info: "General Mobile Radio Services (FCC Licensed Radio Service Equipment) Part 22 (non-cellular) Part 90 (non-microwave) Part 95 Part 97 Part 101 (non-microwave)"
+              - key: citizen-broadband-radio-services
+                grouping: 17025
+                focus: testing
+                name: "Citizens Broadband Radio Services (FCC Licensed Radio Service Equipment) Part 96"
+                icon: /img/citizen-broadband-radio-services.png
+                info: "Citizens Broadband Radio Services (FCC Licensed Radio Service Equipment) Part 96"
+              - key: maritime-aviation-radio-services
+                grouping: 17025
+                focus: testing
+                name: "Maritime and Aviation Radio Services (FCC Licensed Radio Service Equipment) Part 80 Part 87"
+                icon: /img/maritime-aviation-radio-services.png
+                info: "Maritime and Aviation Radio Services (FCC Licensed Radio Service Equipment) Part 80 Part 87"
+              - key: microwave-millimeter-radio-services
+                grouping: 17025
+                focus: testing
+                name: "Microwave and Millimeter Bands Radio Services (FCC Licensed Radio Service Equipment) Part 25 Part 74 Part 90 (90Y, 90Z, DSRC) Part 101"
+                icon: /img/microwave-millimeter-radio-services.png
+                info: "Microwave and Millimeter Bands Radio Services (FCC Licensed Radio Service Equipment) Part 25 Part 74 Part 90 (90Y, 90Z, DSRC) Part 101"
+              - key: broadcast-radio-services
+                grouping: 17025
+                focus: testing
+                name: "Broadcast Radio Services (FCC Licensed Radio Service Equipment) Part 73 Part 74 (non-microwave)"
+                icon: /img/broadcast-radio-services.png
+                info: "Broadcast Radio Services (FCC Licensed Radio Service Equipment) Part 73 Part 74 (non-microwave)"
+              - key: rf-exposure-devices
+                grouping: 17025
+                focus: testing
+                name: "RF Exposure Devices subject to SAR requirements"
+                icon: /img/rf-exposure-devices.png
+                info: "RF Exposure Devices subject to SAR requirements"
+              - key: hearing-aid-compatibility
+                grouping: 17025
+                focus: testing
+                name: "Hearing Aid Compatibility (Part 20) HAC for Commercial mobile services"
+                icon: /img/hearing-aid-compatibility.png
+                info: "Hearing Aid Compatibility (Part 20) HAC for Commercial mobile services"
+              - key: signal-boosters
+                grouping: 17025
+                focus: testing
+                name: "Signal Boosters (Part 20) Wideband Consumer signal boosters Provider-specific signal boosters Industrial signal boosters"
+                icon: /img/signal-boosters.png
+                info: "Signal Boosters (Part 20) Wideband Consumer signal boosters Provider-specific signal boosters Industrial signal boosters"
+      - key: radio
+        category: true
+        grouping: 17025
+        focus: testing
+        name: "Radio Testing"
+        icon: /img/radio.png
+        info: "Radio Testing"
+        sub:
+          - key: radio-conformance
+            grouping: 17025
+            focus: testing
+            name: "Radio Conformance"
+            icon: /img/radio-conformance.png
+            info: "Radio Testing"
+          - key: radio-interoperability
+            grouping: 17025
+            focus: testing
+            name: "Radio Interoberability"
+            icon: /img/radio-interoperability.png
+            info: "Radio Interoperability"
+          - key: radio-performance
+            grouping: 17025
+            focus: testing
+            name: "Radio Performance"
+            icon: /img/radio-performance.png
+            info: "Radio Performance"
+      - key: construction-materials
+        category: true
+        grouping: 17025
+        focus: testing
+        name: "Construction Materials"
+        icon: /img/construction-materials.png
+        info: "Testing of construction materials"
+        sub:
+          - key: soils
+            grouping: 17025
+            focus: testing
+            name: "Soils"
+            icon: /img/soils.png
+            info: "Testing of soils"
+          - key: asphalt-cements
+            grouping: 17025
+            focus: testing
+            name: "Asphalt Cements"
+            icon: /img/asphalt-cements.png
+            info: "Testing of asphalt cements"
+          - key: emulsified-asphalts
+            grouping: 17025
+            focus: testing
+            name: "Emulsified Asphalts"
+            icon: /img/emulsified-asphalts.png
+            info: "Testing of emulsified asphalts"
+          - key: asphalt-mixtures
+            grouping: 17025
+            focus: testing
+            name: "Asphalt Mixtures"
+            icon: /img/asphalt-mixtures.png
+            info: "Testing of asphalt mixtures"
+          - key: aggregates
+            grouping: 17025
+            focus: testing
+            name: "Aggregates"
+            icon: /img/aggregates.png
+            info: "Testing of aggregates"
+          - key: concrete
+            grouping: 17025
+            focus: testing
+            name: "Concrete"
+            icon: /img/concrete.png
+            info: "Testing of concrete"
+          - key: cement
+            grouping: 17025
+            focus: testing
+            name: "Cement"
+            icon: /img/cement.png
+            info: "Testing of cement"
+          - key: masonry
+            grouping: 17025
+            focus: testing
+            name: "Masonry"
+            icon: /img/masonry.png
+            info: "Testing of masonry"
+          - key: iron-steel
+            grouping: 17025
+            focus: testing
+            name: "Iron & Steel"
+            icon: /img/iron-steel.png
+            info: "Testing of iron & steel"
+          - key: bituminous-materials
+            grouping: 17025
+            focus: testing
+            name: "Bituminous Materials"
+            icon: /img/bituminous-materials.png
+            info: "Testing of bituminous materials"
+      - key: acoustical
+        category: true
+        grouping: 17025
+        focus: testing
+        name: "Acoustical"
+        icon: /img/acoustical.png
+        info: "Testing of sound characteristics"
+        sub:
+          - key: sound-characteristics
+            grouping: 17025
+            focus: testing
+            name: "Sound Characteristics"
+            icon: /img/bituminous-materials.png
+            info: "Testing of specific characteristics"
+            sub:
+              - key: acoustic-performance
+                grouping: 17025
+                focus: testing
+                name: "Acoustic Performance"
+                icon: /img/acoustic-performance.png
+                info: "Testing of acoustic performance"
+              - key: field-measurement-sound
+                grouping: 17025
+                focus: testing
+                name: "Field Measurement Sound"
+                icon: /img/field-measurement-sound.png
+                info: "Testing of field measurement of sound"
+              - key: sound-absorption
+                grouping: 17025
+                focus: testing
+                name: "Sound Absorption"
+                icon: /img/sound-absorption.png
+                info: "Testing of sound absorption"
+              - key: sound-power
+                grouping: 17025
+                focus: testing
+                name: "Sound Power"
+                icon: /img/sound-power.png
+                info: "Testing of sound power"
+              - key: sound-transmission-loss
+                grouping: 17025
+                focus: testing
+                name: "Sound Transmission Loss"
+                icon: /img/sound-transmission-loss.png
+                info: "Testing of sound transmission loss"
+          - key: sound-characteristics-enclosed-environments
+            grouping: 17025
+            focus: testing
+            name: "Sound Characteristics Enclosed Environments"
+            icon: /img/sound-characteristics-enclosed-environments.png
+            info: "Testing of specific characteristics in enclosed environments"
+            sub:
+              - key: acoustic-performance
+                grouping: 17025
+                focus: testing
+                name: "Acoustic Performance"
+                icon: /img/acoustic-performance.png
+                info: "Testing of acoustic performance"
+              - key: field-measurement-sound
+                grouping: 17025
+                focus: testing
+                name: "Field Measurement Sound"
+                icon: /img/field-measurement-sound.png
+                info: "Testing of field measurement of sound"
+              - key: sound-absorption
+                grouping: 17025
+                focus: testing
+                name: "Sound Absorption"
+                icon: /img/sound-absorption.png
+                info: "Testing of sound absorption"
+              - key: sound-power
+                grouping: 17025
+                focus: testing
+                name: "Sound Power"
+                icon: /img/sound-power.png
+                info: "Testing of sound power"
+              - key: sound-transmission-loss
+                grouping: 17025
+                focus: testing
+                name: "Sound Transmission Loss"
+                icon: /img/sound-transmission-loss.png
+                info: "Testing of sound transmission loss"
+          - key: sound-characteristics-unenclosed-environments
+            grouping: 17025
+            focus: testing
+            name: "Sound Characteristics Unenclosed Environments"
+            icon: /img/sound-characteristics-unenclosed-environments.png
+            info: "Testing of specific characteristics in unenclosed environments"
+            sub:
+              - key: acoustic-performance
+                grouping: 17025
+                focus: testing
+                name: "Acoustic Performance"
+                icon: /img/acoustic-performance.png
+                info: "Testing of acoustic performance"
+              - key: field-measurement-sound
+                grouping: 17025
+                focus: testing
+                name: "Field Measurement Sound"
+                icon: /img/field-measurement-sound.png
+                info: "Testing of field measurement of sound"
+              - key: sound-absorption
+                grouping: 17025
+                focus: testing
+                name: "Sound Absorption"
+                icon: /img/sound-absorption.png
+                info: "Testing of sound absorption"
+              - key: sound-power
+                grouping: 17025
+                focus: testing
+                name: "Sound Power"
+                icon: /img/sound-power.png
+                info: "Testing of sound power"
+              - key: sound-transmission-loss
+                grouping: 17025
+                focus: testing
+                name: "Sound Transmission Loss"
+                icon: /img/sound-transmission-loss.png
+                info: "Testing of sound transmission loss"
+      - key: vibration
+        category: true
+        grouping: 17025
+        focus: testing
+        name: "Vibration"
+        icon: /img/vibration.png
+        info: "Testing of vibration characteristics"
+        sub:
+          - key: acceleration
+            grouping: 17025
+            focus: testing
+            name: "Acceleration"
+            icon: /img/acceleration.png
+            info: "Testing of acceleration characteristics"
+          - key: random-vibration
+            grouping: 17025
+            focus: testing
+            name: "Random Vibration"
+            icon: /img/random-vibration.png
+            info: "Testing of random vibration characteristics"
+            sub:
+              - key: vibration-performance
+                grouping: 17025
+                focus: testing
+                name: "Vibration Performance"
+                icon: /img/vibration-performance.png
+                info: "Testing of vibration performance"
+              - key: vibration-characteristics-materials-structure
+                grouping: 17025
+                focus: testing
+                name: "Vibration Characteristcs Materials & Structures"
+                icon: /img/vibration-characteristics-materials-structure.png
+                info: "Testing of vibration performance on materials & structures"
+          - key: sinusoidal
+            grouping: 17025
+            focus: testing
+            name: "Sinusoidal"
+            icon: /img/sinusoidal.png
+            info: "Testing of sinusoidal characteristics"
+            sub:
+              - key: vibration-performance
+                grouping: 17025
+                focus: testing
+                name: "Vibration Performance"
+                icon: /img/vibration-performance.png
+                info: "Testing of vibration performance"
+              - key: vibration-characteristics-materials-structure
+                grouping: 17025
+                focus: testing
+                name: "Vibration Characteristcs Materials & Structures"
+                icon: /img/vibration-characteristics-materials-structure.png
+                info: "Testing of vibration performance on materials & structures"
+          - key: shock
+            grouping: 17025
+            focus: testing
+            name: "Shock"
+            icon: /img/shock.png
+            info: "Testing of shock characteristics"
+      - key: environmental
+        category: true
+        grouping: 17025
+        focus: testing
+        name: "Environmental"
+        icon: /img/environmental.png
+        info: "Environmental testing"
+        sub:
+          - key: epa-chemical
+            grouping: 17025
+            focus: testing
+            name: "EPA Chemical"
+            icon: /img/epa-chemical.png
+            info: "Testing of EPA chemicals"
+            sub:
+              - key: epa-drinking-water
+                grouping: 17025
+                focus: testing
+                name: "Shock"
+                icon: /img/epa-drinking-water.png
+                info: "Testing of EPA water"
+                sub:
+                  - key: epa-chemical
+                    grouping: 17025
+                    focus: testing
+                    name: "EPA Chemical"
+                    icon: /img/epa-chemical.png
+                    info: "Testing for chemicals"
+                    sub:
+                      - key: epa-organic
+                        grouping: 17025
+                        focus: testing
+                        name: "EPA Organic"
+                        icon: /img/epa-organic.png
+                        info: "Testing for organic chemicals"
+                      - key: epa-inorganic
+                        grouping: 17025
+                        focus: testing
+                        name: "EPA Inorganic"
+                        icon: /img/epa-inorganic.png
+                        info: "Testing for inorganic chemicals"
+                  - key: epa-microbiological
+                    grouping: 17025
+                    focus: testing
+                    name: "EPA Microbiological"
+                    icon: /img/epa-microbiological.png
+                    info: "Testing for microbes"
+                  - key: epa-radio-chemical
+                    grouping: 17025
+                    focus: testing
+                    name: "EPA Radio Chemical"
+                    icon: /img/epa-radio-chemical.png
+                    info: "Testing for radio emitting chemicals"
+                  - key: epa-cryptosporidium
+                    grouping: 17025
+                    focus: testing
+                    name: "EPA Cryptosporidium"
+                    icon: /img/epa-cryptosporidium.png
+                    info: "Testing for cryptosporidium"
+                  - key: epa-asbestos
+                    grouping: 17025
+                    focus: testing
+                    name: "EPA Asbestos"
+                    icon: /img/epa-asbestos.png
+                    info: "Testing for asbestos"
+              - key: drinking-water
+                grouping: 17025
+                focus: testing
+                name: "Drinking Water"
+                icon: /img/drinking-water.png
+                info: "Testing drinking water"
+                sub:
+                  - key: chemical
+                    grouping: 17025
+                    focus: testing
+                    name: "Chemical"
+                    icon: /img/chemical.png
+                    info: "Testing for chemicals"
+                    sub:
+                      - key: organic
+                        grouping: 17025
+                        focus: testing
+                        name: "Organic"
+                        icon: /img/organic.png
+                        info: "Testing for organic chemicals"
+                      - key: inorganic
+                        grouping: 17025
+                        focus: testing
+                        name: "Inorganic"
+                        icon: /img/inorganic.png
+                        info: "Testing for inorganic chemicals"
+                  - key: microbiological
+                    grouping: 17025
+                    focus: testing
+                    name: "Microbiological"
+                    icon: /img/microbiological.png
+                    info: "Testing for microbes"
+                  - key: radio-chemical
+                    grouping: 17025
+                    focus: testing
+                    name: "Radio Chemical"
+                    icon: /img/radio-chemical.png
+                    info: "Testing for radio emitting chemicals"
+                  - key: cryptosporidium
+                    grouping: 17025
+                    focus: testing
+                    name: "Cryptosporidium"
+                    icon: /img/cryptosporidium.png
+                    info: "Testing for cryptosporidium"
+                  - key: asbestos
+                    grouping: 17025
+                    focus: testing
+                    name: "Asbestos"
+                    icon: /img/asbestos.png
+                    info: "Testing for asbestos"
+              - key: non-potable-water
+                grouping: 17025
+                focus: testing
+                name: "Non Potable Water"
+                icon: /img/non-potable-water.png
+                info: "Testing non potable water"
+                sub:
+                  - key: non-potable-water-chemical
+                    grouping: 17025
+                    focus: testing
+                    name: "Non Potable Water Chemical"
+                    icon: /img/non-potable-water-chemical.png
+                    info: "Testing non potable water for chemicals"
+                    sub:
+                      - key: non-potable-water-chemical-organic
+                        grouping: 17025
+                        focus: testing
+                        name: "Non Potable Water Organic"
+                        icon: /img/non-potable-water-chemical-organic.png
+                        info: "Testing non potable water for organic chemicals"
+                      - key: non-potable-water-chemical-inorganic
+                        grouping: 17025
+                        focus: testing
+                        name: "Non Potable Water Inorganic"
+                        icon: /img/non-potable-water-chemical-inorganic.png
+                        info: "Testing non potable water for Inorganic chemicals"
+                      - key: non-potable-water-chemical-physical
+                        grouping: 17025
+                        focus: testing
+                        name: "Non Potable Water Physical"
+                        icon: /img/non-potable-water-chemical-physical.png
+                        info: "Testing non potable water for physical chemicals"
+                      - key: non-potable-water-chemical-misc
+                        grouping: 17025
+                        focus: testing
+                        name: "Non Potable Water Miscellaneous"
+                        icon: /img/non-potable-water-chemical-misc.png
+                        info: "Testing non potable water for miscellaneous chemicals"
+                  - key: non-potable-water-microbiological
+                    grouping: 17025
+                    focus: testing
+                    name: "Non Potable Water Microbiological"
+                    icon: /img/non-potable-water-microbiological.png
+                    info: "Testing for microbes"
+                  - key: non-potable-water-radio-chemical
+                    grouping: 17025
+                    focus: testing
+                    name: "Non Potable Water Radio Chemical"
+                    icon: /img/non-potable-water-radio-chemical.png
+                    info: "Testing for radio emitting chemicals"
+                  - key: non-potable-water-cryptosporidium
+                    grouping: 17025
+                    focus: testing
+                    name: "Non Potable Water Cryptosporidium"
+                    icon: /img/non-potable-water-cryptosporidium.png
+                    info: "Testing for cryptosporidium"
+                  - key: non-potable-water-asbestos
+                    grouping: 17025
+                    focus: testing
+                    name: "Non Potable Water Asbestos"
+                    icon: /img/non-potable-water-asbestos.png
+                    info: "Testing for asbestos"
+              - key: solid-chemical-materials
+                grouping: 17025
+                focus: testing
+                name: "Solid and Chemical Materials"
+                icon: /img/solid-chemical-materials.png
+                info: "Testing solid and chemical materials"
+                sub:
+                  - key: solid-chemical-materials-chemical
+                    grouping: 17025
+                    focus: testing
+                    name: "Chemical"
+                    icon: /img/solid-chemical-materials-chemical.png
+                    info: "Testing for chemicals"
+                    sub:
+                      - key: solid-chemical-materials-chemical-organic
+                        grouping: 17025
+                        focus: testing
+                        name: "Solid Chemical Materials Organic"
+                        icon: /img/solid-chemical-materials-chemical-organic.png
+                        info: "Testing solid chemical and materials for organic"
+                      - key: solid-chemical-materials-chemical-organic
+                        grouping: 17025
+                        focus: testing
+                        name: "Solid Chemical Materials Inorganic"
+                        icon: /img/solid-chemical-materials-chemical-inorganic.png
+                        info: "Testing solid chemical and materials for inorganic"
+                      - key: solid-chemical-materials-chemical-inorganic
+                        grouping: 17025
+                        focus: testing
+                        name: "Solid Chemical Materials Physical"
+                        icon: /img/solid-chemical-materials-chemical-physical.png
+                        info: "Testing solid chemical and materials for physical"
+                      - key: solid-chemical-materials-chemical-physical
+                        grouping: 17025
+                        focus: testing
+                        name: "Solid Chemical Materials Miscellaneous"
+                        icon: /img/solid-chemical-materials-chemical-miscellaneous.png
+                        info: "Testing solid chemical and materials for miscellaneous"
+                  - key: toxicity
+                    grouping: 17025
+                    focus: testing
+                    name: "Toxicity Testing"
+                    icon: /img/toxicity.png
+                    info: "Testing solid chemical and materials for toxicity"
+                  - key: microbiological
+                    grouping: 17025
+                    focus: testing
+                    name: "Microbiological Testing"
+                    icon: /img/microbiological.png
+                    info: "Testing solid chemical and materials for microbes"
+                  - key: radio-chemical
+                    grouping: 17025
+                    focus: testing
+                    name: "Radio Chemical Testing"
+                    icon: /img/radio-chemical.png
+                    info: "Testing solid chemical and materials for radio emitting chemicals"
+                  - key: asbestos
+                    grouping: 17025
+                    focus: testing
+                    name: "Asbestos Testing"
+                    icon: /img/asbestos.png
+                    info: "Testing solid chemical and materials for asbestos"
+              - key: biological-tissue
+                grouping: 17025
+                focus: testing
+                name: "Biological Tissue Testing"
+                icon: /img/biological-tissue.png
+                info: "Testing biological tissue"
+                sub:
+                  - key: biological-tissue-chemical
+                    grouping: 17025
+                    focus: testing
+                    name: "Biological Tissue Testing Chemical"
+                    icon: /img/biological-tissue-chemical.png
+                    info: "Testing biological tissue for chemicals"
+                    sub:
+                      - key: biological-tissue-chemical-organic
+                        grouping: 17025
+                        focus: testing
+                        name: "Biological Tissue Testing Organic"
+                        icon: /img/biological-tissue-chemical-organic.png
+                        info: "Testing biological tissue for organic chemicals"
+                      - key: biological-tissue-chemical-inorganic
+                        grouping: 17025
+                        focus: testing
+                        name: "Biological Tissue Testing Inorganic"
+                        icon: /img/biological-tissue-chemical-inorganic.png
+                        info: "Testing biological tissue for inorganic chemicals"
+                      - key: biological-tissue-chemical-physical
+                        grouping: 17025
+                        focus: testing
+                        name: "Biological Tissue Testing Physical"
+                        icon: /img/biological-tissue-chemical-physical.png
+                        info: "Testing biological tissue for physical chemicals"
+                      - key: biological-tissue-chemical-misc
+                        grouping: 17025
+                        focus: testing
+                        name: "Biological Tissue Testing Miscellaneous"
+                        icon: /img/biological-tissue-chemical-physical.png
+                        info: "Testing biological tissue for miscellaneous chemicals"
+                  - key: biological-tissue-toxicity
+                    grouping: 17025
+                    focus: testing
+                    name: "Biological Tissue Testing Toxicity"
+                    icon: /img/biological-tissue-toxicity.png
+                    info: "Testing biological tissue for toxicity"
+                  - key: biological-tissue-microbiology
+                    grouping: 17025
+                    focus: testing
+                    name: "Biological Tissue Testing Microbiology"
+                    icon: /img/biological-tissue-microbiology.png
+                    info: "Testing biological tissue for microbiology"
+                  - key: biological-tissue-radio-chemical
+                    grouping: 17025
+                    focus: testing
+                    name: "Biological Tissue Testing Radio Chemicals"
+                    icon: /img/biological-tissue-radio-chemical.png
+                    info: "Testing biological tissue for radio chemicals"
+                  - key: biological-tissue-asbestos
+                    grouping: 17025
+                    focus: testing
+                    name: "Biological Tissue Testing Asbestos"
+                    icon: /img/biological-tissue-asbestos.png
+                    info: "Testing biological tissue for asbestos"
+              - key: air-emissions
+                grouping: 17025
+                focus: testing
+                name: "Air Emission Testing"
+                icon: /img/air-emissions.png
+                info: "Testing air emissions"
+                sub:
+                  - key: air-emissions-chemical
+                    grouping: 17025
+                    focus: testing
+                    name: "Air Emission Testing Chemicals"
+                    icon: /img/air-emissions-chemical.png
+                    info: "Testing air emissions for chemicals"
+                    sub:
+                      - key: air-emissions-chemical-organic
+                        grouping: 17025
+                        focus: testing
+                        name: "Air Emission Testing Organic Chemicals"
+                        icon: /img/air-emissions-chemical-organic.png
+                        info: "Testing air emissions for organic chemicals"
+                      - key: air-emissions-chemical-inorganic
+                        grouping: 17025
+                        focus: testing
+                        name: "Air Emission Testing Inorganic Chemicals"
+                        icon: /img/air-emissions-chemical-inorganic.png
+                        info: "Testing air emissions for inorganic chemicals"
+              - key: spectroscopy
+                grouping: 17025
+                focus: testing
+                name: "Spectroscopy Testing"
+                icon: /img/spectroscopy.png
+                info: "Spectroscopy testing"
+             
+    forensics: 
+      - key: iso17025
+        name: "ISO/IEC 17025 Accreditation Programs"
+        info: "ISO/IEC 17025 Accreditation Programs are about..."
+    management:
+      - key: quality
+        grouping: 17021
+        category: true
+        name: "Quality Management"
+        icon: icon-tick-rounded
+        info: "Quality Management Accrediation Programs are about....."
+        sub:
+          - key: iso9001
+            grouping: 17021
+            name : "ISO 9001"
+            icon: /img/iso9001.png
+            info: "ISO 9001 Accrediation Programs are about...."
+            sub:    
+              - key: ba9000
+                grouping: 17021
+                name : "BA 9000"
+                icon: /img/ba9000.png
+                info : "BA 9000 is about..."       
+              - key: sn9001
+                grouping: 17021 
+                name : "SN 9001"
+                icon: /img/sn9001.png
+                info : "SN 9001 is about..." 
+              - key: tl9000 
+                grouping: 17021
+                name : "TL 9000"
+                icon: /img/tl9000.png
+                info : "TL 9000 is about..."  
+                sub:    
+                  - key: as9120
+                    grouping: 17021
+                    name : "AS 9120"
+                    icon: /img/as9120.png
+                    info : "AS 9120 is about..."          
+              - key: as9100 
+                grouping: 17021
+                name : "AS 9100"
+                info : "AS 9100 is about..."           
+      - key: counterfeit
+        grouping: 17021
+        category: true
+        name: "Counterfeit"
+        icon: icon-counterfeit
+        info : "Counterfeit Accrediation Programs are about..."
+        sub:
+          - key: AS6081
+            grouping: 17021
+            name : "AS 6081"
+            info : "ISO 9001 Accrediation Programs are about..."
+      - key: occupational
+        grouping: 17021
+        name: "Occuptational Health & Safety Management Systems"
+        icon: icon-tick-rounded
+        category: true
+        info: "Occupational Health and Safety is about..."
+        sub:
+           - key: ansiaiha
+             grouping: 17021
+             name: "ANSI/AIHA Z10"
+             icon: /img/ansi-aiha-z10.png
+             info: "ANSI/AIHA A10 is about..."
+           - key: "bsohsas18001"
+             grouping: 17021
+             name: "BS OHSAS 18001"
+             icon: "/img/bs-ohsas-18001.png"
+             info: "BS OHSAS 18001 is about..."
+           - key: csa7100
+             grouping: 17021
+             name: "CSA Z1000"
+             icon: "/img/csa-z1000.png"
+             info: "CSA 7100 is about..."
+      - key: forestry
+        grouping: 17021
+        category: true
+        name: "Forestry"
+        icon: icon-forestry
+        info: "Forestry is about..."
+        sub:
+          - key: sfi
+            grouping: 17021
+            name: "SFI"
+            icon: /img/sfi.png
+            info: "SFI is about..."
+          - key: atfs
+            grouping: 17021
+            name : "ATFS"
+            icon: /img/atfs.png
+            info: "ATFS is about..."
+      - key: environmental
+        grouping: 17021
+        name: "Environmental Management"
+        icon: icon-environmental
+        category: true
+        info: "Environmental Management is about..."
+        sub:
+          - key: iso14001
+            grouping: 17021
+            name: "ISO 14001"
+            icon: /img/iso14001.png
+            info: "ISO 14001 is about..."
+            sub:
+              - key: estewards
+                grouping: 17021
+                name: "E-Stewards"
+                icon: /tmp/estewards
+                info: "E Stewards is about..."
+              - key: rc14001
+                grouping: 17021
+                name: "RC14001"
+                icon: /tmp/rc14001.png
+                info: "RC 14001 is about..."
+      - key: food
+        grouping: 17021
+        category: true
+        name: "Food Safety Management"
+        icon: icon-food
+        info: "Food Safety Management is about..."
+        sub:
+          - key: gfcp
+            grouping: 17021
+            name: "GFCP"
+            icon: /img/gfcp.png
+            info: "GFCP is about..."
+          - key: iso22000
+            grouping: 17021
+            name: "ISO 22000"
+            icon: /tmp/iso22000.png
+            info: "GFCP is about..."
+            sub:
+              - key: fssc22000
+                grouping: 17021
+                name: "FSSC 22000"
+                icon: /img/fssc22000.png
+                info: "FSSC 22000 is about..."
+      - key: it
+        grouping: 17021
+        name: "Information Technology"
+        category: true
+        icon: icon-it
+        info: "Information Technology is about..."
+        sub:
+          - key: iso28000
+            grouping: 17021
+            name: "ISO 28000"
+            icon: /img/iso28000.png
+            info: "ISO 28000 is about..."
+          - key: isoiec20000-1
+            grouping: 17021
+            name: "ISO/IEC 20000-1"
+            icon: /img/isoiec20000-1.png
+            info: "ISO/IEC 20000-1 is about..."
+          - key: isoiec27001
+            grouping: 17021
+            name: "ISO/IEC 27001"
+            icon: /tmp/isoiec27001.png
+            info: "ISO/IEC 27001 is about..."
+      - key: energy
+        grouping: 17021
+        category: true
+        name: "Energy Management"
+        icon: icon-energy
+        info: "Energy Management is about..."
+        sub:
+          - key: iso50001
+            grouping: 17021
+            name: "ISO 50001"
+            icon: /tmp/iso50001.png
+            info: "ISO 50001 is about..."
+            sub:
+              - key: ansimse50021
+                grouping: 17021
+                name: "ANSI/MSE 50021"
+                icon: /tmp/ansimse50021.png
+                info: "ANSI/MSE 50021 is about..."
+      - key: business
+        grouping: 17021
+        category: true      
+        name: "Business Continuity Management"
+        icon: icon-businesscontinuity
+        info: "Business Continuity Management is about..."
+        sub:
+          - key: asisspc
+            grouping: 17021
+            name: "ASIS SPC.1"
+            icon: /tmp/asisspc.png
+            info: "ASIS SPC.1 is about..."
+          - key: asisbsibcm
+            grouping: 17021
+            name: "ASIS/BSI BCM.01"
+            icon: /tmp/asisbsibcm.png
+            info: "ASIS/BSI BCM.01 is about..."
+          - key: iso22301
+            grouping: 17021
+            name: "ISO 22301"
+            icon: /tmp/iso22301.png
+            info: "ISO 22301 is about..."
+          - key: nfpa1600
+            grouping: 17021
+            name: "NFPA 1600"
+            icon: /tmp/nfpa1600.png
+            info: "NFPA 1600 is about..."
+      - key: digital
+        grouping: 17021
+        category: true
+        name: "Digital Repositories"
+        icon: icon-digital
+        info: "Digital Repositories is about..."
+        sub:
+          - key: iso16363
+            grouping: 17021
+            name: "ISO 16363"
+            icon: /img/iso16363.png
+            info: "ISO 16363 is about..."
+      - key: private
+        grouping: 17021
+        category: true
+        name: "Private Security Operations"
+        icon: icon-security
+        info: "Private Security Operations is about..."
+        sub:
+          - key: iso18788
+            grouping: 17021
+            name: "ISO 18788"
+            icon: /img/iso18788.png
+            info: "ISO 18788"
+          - key: ansiasispsc.1
+            grouping: 17021
+            name: "ANSI/ASIS PSC.1"
+            icon: /img/ansiasispsc.1.png
+            info: "ANSI/ASIS PSC.1 is about..."
+      - key: road
+        grouping: 17021
+        category: true
+        name: "Road Traffic Safety"
+        icon: icon-traffic
+        info: "Road Traffic Safety is about..."
+        sub:
+          - key: iso39001
+            grouping: 17021
+            name: "ISO 39001"
+            icon: /img/iso39001.png
+            info: "ISO 39001 is about..."
+      - key: asset
+        grouping: 17021
+        category: true
+        name: "Asset Management"
+        icon: icon-tick-rounded
+        info: "Asset Management is about..."
+        sub:
+          - key: iso55001
+            grouping: 17021
+            name: "ISO 55001"
+            icon: /img/iso55001.png
+            info: "ISO 55001 is about..."
+      - key: ethical
+        grouping: 17021
+        category: true
+        name: "Ethical Sourcing"
+        icon: icon-ethical
+        info: "Ethical Sourcing is about..."
+        sub:
+          - key: sqfiethical
+            grouping: 17021
+            name: "SQFI Ethical Sourcing"
+            icon: /tmp/sqfiethical.png
+            info: "SQFI Ethical Sourcing is about..."
+      - key: medical
+        grouping: 17021
+        category: true
+        name: "Medical Devices"
+        icon: icon-medical
+        info: "Medical Devices is about..."
+        sub:
+          - key: iso13485
+            grouping: 17021
+            name: "ISO 13485"
+            icon: /img/iso13485.png
+            info: "ISO 13485 is about..."
+      - key: recycling
+        grouping: 17021
+        category: true
+        name: "Recycling"
+        icon: icon-tick-rounded
+        info: "Recycling is about..."
+        sub:
+          - key: r2
+            grouping: 17021
+            name: "R2"
+            icon: /img/r2.png
+            info: "R2 is about..."
+          - key: rios
+            grouping: 17021
+            name: "RIOS"
+            icon: /img/rios.png
+            info: "RIOS is about..."
+      - key: responsible
+        grouping: 17021
+        category: true
+        name: "Responsible Care"
+        icon: icon-tick-rounded
+        info: "Responsible Care is about..."
+        sub:
+          - key: rcms
+            grouping: 17021
+            name: "RCMS"
+            icon: /img/rcms.png
+            info: "RCMS is about..."                
+    
+     
+banner:
+  location : classpath:banner-bpm.txt
+  #image.location : /static/img/greenfence.png
+  #text: [[ greenfence ]) - BPM
+  #renderer: http://patorjk.com/software/taag/#p=display&f=Big&t=%5B%5B%20greenfence%20%5D)%20-%20BPM
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/thymeleaf_demo?useSSL=false
+    username: root
+    password: root
+    
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto : update
+  activiti:
+    checkProcessDefinitions : false
+  
+sso:
+  server : http://localhost:28081/auth
+  client-id: greenfence  
+  client-secret:  greenfence$123
+  scopes: openid
+  redirect-uri: http://localhost:30110
+  
+payments:
+  uri: http://localhost:9091
+
+notifications:
+  amqp:
+    notifications-queue: bpm-anab-auditors
+    
+---
+
+spring:
+  profiles: cloud
+ 
+auditors:
+  ui:
+     links:
+       home: http://microservicesdev.greenfence.com
+       sso: http://greenfence-sso-gateway-dev.cfapps.io
+       payments: http://greenfence-payments-gateway-dev.cfapps.io
+       documents: http://greenfence-documents-gateway-dev.cfapps.io
+       notifications: http://greenfence-notifications-gateway-dev.cfapps.io
+       messaging: http://greenfence-messaging-gateway-dev.cfapps.io 
+sso:
+  server : https://greenfence-sso-gateway-dev.cfapps.io/
+  redirect-uri: https://greenfence-bpm-anab-audits.cfapps.io
+  
+  
+payments:
+  uri: https://greenfence-payments-gateway-dev.cfapps.io/
+  
+notifications:
+  uri:  http://greenfence-notifications-gateway-dev.cfapps.io
+   
