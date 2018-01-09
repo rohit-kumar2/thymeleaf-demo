@@ -1,4 +1,4 @@
-package com.thmeleaf.demo.utils;
+package com.thymeleaf.demo.utils;
 
 public class ConverterUtil {
 	

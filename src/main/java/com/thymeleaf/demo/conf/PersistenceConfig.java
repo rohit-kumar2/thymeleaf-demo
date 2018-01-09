@@ -18,7 +18,7 @@ import com.greenfence.common.repository.CommonRepositoryConfig;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
-@Import({BpmSsoClientSecurityConfigurer.class, InfrastructureConfig.class, ActivitiConfig.class, CommonRepositoryConfig.class})
+@Import({BpmSsoClientSecurityConfigurer.class, InfrastructureConfig.class})
 @EnableJpaRepositories(basePackages="com.thymeleaf.demo.repository")
 public class PersistenceConfig {
 	
