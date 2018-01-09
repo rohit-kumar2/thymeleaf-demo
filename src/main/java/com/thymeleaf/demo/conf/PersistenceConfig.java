@@ -15,14 +15,10 @@ import com.greenfence.bpm.common.BpmSsoClientSecurityConfigurer;
 import com.greenfence.bpm.common.activity.ActivitiConfig;
 import com.greenfence.common.infrastructure.InfrastructureConfig;
 import com.greenfence.common.repository.CommonRepositoryConfig;
-import com.greenfence.document.client.DocumentsClientConfig;
-import com.greenfence.notifications.client.NotificationsClientConfig;
-import com.greenfence.notifications.client.StompWebSocketConfig;
-import com.greenfence.payments.client.PaymentsClientConfig;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
-@Import({InfrastructureConfig.class, CommonRepositoryConfig.class})
+@Import({BpmSsoClientSecurityConfigurer.class, InfrastructureConfig.class, ActivitiConfig.class, CommonRepositoryConfig.class})
 @EnableJpaRepositories(basePackages="com.thymeleaf.demo.repository")
 public class PersistenceConfig {
 	
@@ -36,7 +32,7 @@ public class PersistenceConfig {
 	private String password;
 	
 	@Value("${spring.datasource.driver-class-name}")
-	private String driverClass;
+	private String driverClass;/*
 	
 	@Bean
     public DataSource createDataSource() throws Exception {
@@ -44,7 +40,7 @@ public class PersistenceConfig {
         ds.setJdbcUrl(url+"&user="+username+"&password="+password);
         ds.setDriverClass(driverClass);
         return ds;
-	}
+	}*/
 	
 	@Bean
 	@Primary
