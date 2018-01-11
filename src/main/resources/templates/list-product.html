@@ -1,9 +1,12 @@
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
 <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/css/jquery-editable.css" rel="stylesheet"/>
 <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/js/jquery-editable-poshytip.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"/>
 
 <div xmlns:th="http://www.thymeleaf.org">
-	<table>
+<div class="w-75 mx-auto mt-5 card p-5">
+	<h2 class="mb-4 text-uppercase">List of Products</h2>
+	<table class="table table-striped">
 		<tr>
 			<th>
 				<span th:text="#{product.name}"></span>
@@ -26,7 +29,7 @@
 				<a href="#" class="x-edit" th:id="inStock-+${product.id}+-select" th:href="@{'/product/'+${product.id}}" th:text="${product.inStock}"></a>
 			</td>
 		</tr>
-		<tr>
+		<!-- <tr>
 			<td>
 				<span data-bind="editable: computed, editableOptions: { mode: 'inline', type: 'select', source: [{value : 0, text: &#34;false&#34; }, { value: 1, text: &#34;true&#34; }]}"></span>
 				<span data-bind="text: value"></span>
@@ -34,8 +37,11 @@
 			<td>
 				<a th:href="@{'/product/add'}">Add Product</a>
 			</td>
-		</tr>
+		</tr> -->
 	</table>
+	
+	<button type="button" class="btn btn-dark mt-5"><a class="text-white d-block" th:href="@{'/product/add'}">Add Product</a></button>
+</div>
 </div>
 
 <script type="text/javascript">

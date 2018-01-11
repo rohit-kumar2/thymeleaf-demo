@@ -1,19 +1,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Products</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"/>
 </head>
 <body>
+<div class="w-75 mx-auto mt-5 card p-5">
+	<h2 class="mb-4 text-uppercase">Add Product</h2>
 	<form id="product-frm" method="post" th:action="@{/product}" th:object="${product}">
-		<div>
-			<label for="name">Product name</label><input type="text" name="name" th:field="*{name}"/>
+		<div class="form-group">
+			<label for="name">Product name</label>
+			<input class="form-control" type="text" name="name" th:field="*{name}"/>
 		</div>
-		<div>
-			<label for="price">Price</label><input type="text" name="price" th:field="*{price}"/>
+		<div class="form-group">
+			<label for="price">Price</label>
+			<input class="form-control" type="text" name="price" th:field="*{price}"/>
 		</div>
-		<div>
-			<label for="inStock">In stock</label><input type="checkbox" name="inStock" th:field="*{inStock}"/>
+		<div class="form-check">
+			<input type="checkbox" class="form-check-input" name="inStock" th:field="*{inStock}"/>
+			<label class="form-check-label" for="inStock">In stock</label>
 		</div>
-		<button type="submit" name="submit">Add Product</button>
+		<button class="btn btn-dark mt-5 float-right" type="submit" name="submit">Add Product</button>
 	</form>
+</div>
 </body>
 </html>
