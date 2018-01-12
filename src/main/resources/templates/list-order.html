@@ -1,5 +1,8 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"/>
 <div xmlns:th="http://www.thymeleaf.org">
-	<table>
+<div class="w-75 mx-auto mt-5 card p-5">
+	<h2 class="mb-4 text-uppercase">List of Products</h2>
+	<table class="table table-striped">
 		<tr>
 			<th>
 				<span th:text="#{order.date}"></span>
@@ -52,10 +55,13 @@
 				</table>
 			</td>
 		</tr>
-		<tr>			
+		<!-- <tr>			
 			<td>
 				<a th:href="@{'/order/create'}">Create Order</a>
 			</td>
-		</tr>
+		</tr> -->
 	</table>
+	
+	<button type="button" class="btn btn-dark mt-5"><a class="text-white d-block" th:href="@{'/order/create'}">Create Order</a></button>
+</div>
 </div>

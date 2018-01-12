@@ -1,9 +1,12 @@
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"/>
 
 <div xmlns:th="http://www.thymeleaf.org">
+<div class="w-75 mx-auto mt-5 card px-5 pt-5 pb-3">
+	<h2 class="mb-4 text-uppercase">Create Order</h2>
 	<form id="order-frm" method="post" th:action="@{/order}" th:object="${order}">
 		<input type="hidden" th:field="${order.customer}"/>
-		<table>
+		<table class="table table-striped">
 			<tr>
 				<th>
 					<span th:text="#{product.name}"></span>
@@ -13,6 +16,8 @@
 				</th>
 				<th>
 					<span th:text="#{product.quantity}"></span>
+				</th>
+				<th>
 				</th>
 			</tr>
 			<tr th:each="product, itr : ${products}" th:if="${product.inStock}">
@@ -24,17 +29,17 @@
 					<span th:text="${product.price}"></span>
 				</td>
 				<td>
-					<input type="number" th:name="${'orderLines['+ itr.index +'].quantity'}" th:value="${'orderLines['+ itr.index +'].quantity'}"/>
+					<input class="form-control form-control-sm w-25" type="number" th:name="${'orderLines['+ itr.index +'].quantity'}" th:value="${'orderLines['+ itr.index +'].quantity'}"/>
 				</td>
 				<td>
 					<input type="hidden" th:id="${'isOrdered['+ itr.index +']'}" th:name="${'orderLines['+ itr.index +'].isOrdered'}"/>
-					<button th:id="${itr.index}" type="button" class="add">Add Item</button>
+					<button th:id="${itr.index}" type="button" class="btn btn-dark add">Add Item</button>
 				</td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td>
 					<label>Street</label>
-					<input type="text" th:field="${order.shippingAddress.street}"/>
+					<input class="form-control" type="text" th:field="${order.shippingAddress.street}"/>
 				</td>
 				<td>
 					<label>City</label>
@@ -45,11 +50,28 @@
 					<input type="text" th:field="${order.shippingAddress.zip}"/>
 				</td>
 				<td>
-					<button type="submit" >Place Order</button>
+					<button class="btn btn-dark" type="submit" >Place Order</button>
 				</td>
-			</tr>
+			</tr> -->
 		</table>
+		<hr class="mt-5 mb-3"/>
+		<div class="form-row">
+    		<div class="col">
+    			<label>Street</label>
+				<input class="form-control" type="text" th:field="${order.shippingAddress.street}"/>
+    		</div>
+    		<div class="col">
+    			<label>City</label>
+				<input class="form-control" type="text" th:field="${order.shippingAddress.city}"/>
+    		</div>
+    		<div class="col">
+    			<label>Pin Code</label>
+				<input class="form-control" type="text" th:field="${order.shippingAddress.zip}"/>
+    		</div>
+    	</div>
+		<button class="btn btn-dark mt-3 float-right" type="submit" >Place Order</button>
 	</form>
+</div>
 </div>
 
 <script type="text/javascript">
