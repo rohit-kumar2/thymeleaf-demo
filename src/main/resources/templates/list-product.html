@@ -2,8 +2,9 @@
 <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/css/jquery-editable.css" rel="stylesheet"/>
 <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/js/jquery-editable-poshytip.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
-<div xmlns:th="http://www.thymeleaf.org">
+<div xmlns:th="http://www.thymeleaf.org" ng-app="listProduct" ng-controller="listProductCtrl">
 <div class="w-75 mx-auto mt-5 card p-5">
 	<h2 class="mb-4 text-uppercase">List of Products</h2>
 	<table class="table table-striped">
@@ -18,15 +19,15 @@
 				<span th:text="#{product.inStock}"></span>
 			</th>
 		</tr>
-		<tr th:each="product : ${products}">
+		<tr ng-repeat="product in products">
 			<td>
-				<a href="#" class="x-edit" th:id="name-+${product.id}+-text" th:href="@{'/product/'+${product.id}}" th:text="${product.name}"></a>
+				<a href="#" class="x-edit" ng-attr-id="{{'name-'+product.id+'-text'}}" ng-href="{{'/product/'+product.id}}">{{product.name}}</a>
 			</td>
 			<td>
-				<a href="#" class="x-edit" th:id="price-+${product.id}+-text" th:href="@{'/product/'+${product.id}}" th:text="${product.price}"></a>
+				<a href="#" class="x-edit" ng-attr-id="{{'price-'+product.id+'-text'}}" ng-href="{{'/product/'+product.id}}">{{product.price}}</a>
 			</td>
 			<td>
-				<a href="#" class="x-edit" th:id="inStock-+${product.id}+-select" th:href="@{'/product/'+${product.id}}" th:text="${product.inStock}"></a>
+				<a href="#" class="x-edit" ng-attr-id="{{'inStock-'+product.id+'-select'}}" ng-href="{{'/product/'+product.id}}">{{product.inStock}}</a>
 			</td>
 		</tr>
 		<!-- <tr>
@@ -40,11 +41,21 @@
 		</tr> -->
 	</table>
 	
-	<button type="button" class="btn btn-dark mt-5"><a class="text-white d-block" th:href="@{'/product/add'}">Add Product</a></button>
+	<button type="button" class="btn btn-dark mt-5"><a class="text-white d-block" ng-href="{{'/product/add'}}">Add Product</a></button>
 </div>
 </div>
 
 <script type="text/javascript">
+	var app = angular.module("listProduct", []);
+	app.controller("listProductCtrl", function($scope, $http) {
+		$http.get("/product/rest/list").then(function(response) {
+			$scope.products = response.data;
+		}, function(reason) {
+			
+		}, function(value) {
+			
+		})
+	})
 	//<![CDATA[
 	function ViewModel() {
 	    var self = this;

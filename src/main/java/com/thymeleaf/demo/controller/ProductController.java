@@ -2,6 +2,7 @@ package com.thymeleaf.demo.controller;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.thymeleaf.demo.entity.Product;
 import com.thymeleaf.demo.entity.XEditableForm;
 import com.thymeleaf.demo.service.ProductService;
@@ -36,6 +39,13 @@ public class ProductController {
 	public String showAllProducts(Model model) {
 		model.addAttribute("products", productService.getAllProducts());
         return "list-product";
+	}
+	
+	@GetMapping
+	@RequestMapping("/rest/list")
+	@ResponseBody
+	public List<Product> showAllProducts() {
+        return productService.getAllProducts();
 	}
 	
 	@PostMapping
