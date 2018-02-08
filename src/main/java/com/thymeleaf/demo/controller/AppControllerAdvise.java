@@ -18,7 +18,10 @@ import com.thymeleaf.demo.conf.DemoConfiguration;
 public class AppControllerAdvise extends CommonControllerAdvise {
 	
 	@Autowired
-	private DemoConfiguration config;
+	private DemoConfiguration config;	
+	
+	@Autowired
+	private SsoClient ssoClient;
 	
 	@ModelAttribute("principal")
 	public Principal principal(Principal principal) {
@@ -27,11 +30,8 @@ public class AppControllerAdvise extends CommonControllerAdvise {
 
 
 	@Override
-	protected Object makePrincipalInfo(Principal principal) {
-		if (principal!=null) {
-			return SsoClient.getProfile(principal);
-		}
-		return null;
+	protected Object makePrincipalInfo(Principal principal, boolean invalid) {
+		return ssoClient.getUser(principal, invalid);
     }
 	
 
@@ -47,14 +47,12 @@ public class AppControllerAdvise extends CommonControllerAdvise {
 	@ModelAttribute("admin")
 	public Boolean admin(Principal principal, HttpSession session) {
 		return roleManager.isAdmin(principal, session);
-		//return true;
     }
 	
 
 	@ModelAttribute("customer")
 	public Boolean isCustomer(Principal principal, HttpSession session) {
 		return roleManager.isCustomer(principal, session);
-		//return false;
     }
 	
 	

@@ -3,7 +3,6 @@ package com.thymeleaf.demo.controller;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.security.Principal;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +32,18 @@ public class ProductController {
 	}
 	
 	@GetMapping
+	//@ResponseBody
 	@RequestMapping("/list")
-	public String showAllProducts(Model model, Principal principal) {
+	public //ResponseEntity<List<Product>> 
+		String showAllProducts(Model model, Principal principal) {
+				//JwtAuthenticationToken token) {
 		model.addAttribute("products", productService.getAllProducts());
         return "list-product";
+        /*Principal principal = (Principal) token.getPrincipal();
+		if (principal == null) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+		}
+		return ResponseEntity.ok(productService.getAllProducts());*/
 	}
 	
 	@PostMapping

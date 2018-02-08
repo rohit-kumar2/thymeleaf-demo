@@ -23,7 +23,7 @@ spring:
     checkProcessDefinitions : false
   
 sso:
-  server : http://localhost:28081/auth
+  server : http://10.10.30.199:28081/auth
   client-id: greenfence  
   client-secret:  greenfence$123
   scopes: openid

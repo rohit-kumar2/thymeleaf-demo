@@ -73,6 +73,11 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<!-- <dependency>
+			<groupId>com.svlada</groupId>
+			<artifactId>jwt-demo</artifactId>
+			<version>1</version>
+		</dependency> -->
 	</dependencies>
 
 	<build>

@@ -1,8 +1,5 @@
 package com.thymeleaf.demo.conf;
 
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -14,8 +11,6 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import com.greenfence.bpm.common.BpmSsoClientSecurityConfigurer;
 import com.greenfence.bpm.common.activity.ActivitiConfig;
 import com.greenfence.common.infrastructure.InfrastructureConfig;
-import com.greenfence.common.repository.CommonRepositoryConfig;
-import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
 @Import({BpmSsoClientSecurityConfigurer.class, InfrastructureConfig.class, ActivitiConfig.class})
